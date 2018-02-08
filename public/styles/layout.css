@@ -37,12 +37,11 @@ body {
   display: block;
   border-radius: 5px;
   border-color: #eee;
-  outline-color: #62D2FA; 
+  outline-color: #62D2FA;
 }
 
 .new-list button {
   margin-left: 115px;
   margin-top: 20px;
   font-family: impact;
-  margin-right: 10px;
 }
