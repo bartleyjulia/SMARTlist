@@ -49,45 +49,52 @@ body {
   font-family: helvetica;
   color: white;
   height: 62px;
-  width: 355px;
   background-color: #E6AC69;
   border-radius: 0 0 5px 5px;
   width: 100%;
 }
 
-button {
-  position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
+#firstCategory {
+  margin-top: 30px;
+}
+
+.category {
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #eee;
+  margin: 0 auto;
   margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.category button {
+  margin-left: 0px;
+  margin-top: 0px;
   font-family: helvetica;
   color: white;
   height: 62px;
-  width: 97%;
+  width: 100%;
   border: none;
 }
 
-#toWatch button {
-  margin-top: 30px;
+#toWatch {
   background-color: #9F6DE4;
 }
 
-#toRead button {
+#toRead {
   background-color: #69BC75;
 }
 
-#toEat button {
+#toEat {
   background-color: #E47C6D;
 }
 
-#toBuy button {
+#toBuy {
   background-color: #E1D371;
 }
 
-#other button {
+#other {
   background-color: #65CAD9;
-}
-
-#toWatch .toggleList {
-  margin-left: 30px;
 }
