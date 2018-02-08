@@ -2,12 +2,12 @@ body {
   background-color: #5E86EA;
   max-width: 600px;
   margin: 0 auto;
+  font-family: Helvetica;
 }
 
 #nav-bar {
   background-color: #62D2FA;
   color: #ffff;
-  font-family: Helvetica, sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -46,7 +46,6 @@ body {
 .new-list button {
   margin-left: 0px;
   margin-top: 0px;
-  font-family: helvetica;
   color: white;
   height: 62px;
   background-color: #E6AC69;
@@ -72,7 +71,6 @@ body {
 .category button {
   margin-left: 0px;
   margin-top: 0px;
-  font-family: helvetica;
   color: white;
   height: 62px;
   width: 100%;
@@ -97,4 +95,23 @@ body {
 
 #other {
   background-color: #65CAD9;
+}
+
+.toggleList div {
+  border: 1px solid black;
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggleList div .check {
+  padding: 20px;
+}
+
+.toggleList div p{
+  padding: 20px;
+  margin: 0;
+  text-align: right;
+  padding-right: 30px;
+  display: inline-block
 }
