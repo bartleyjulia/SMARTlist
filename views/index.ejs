@@ -22,6 +22,7 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
+    <!-- JS APP -->
     <script type="text/javascript" src="/scripts/app.js"></script>
 
     <!-- Create Format Package -->
@@ -33,7 +34,7 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <span class="header">compleet.io</span>
+      <span class="header">compleet.ai</span>
     </nav>
 
     <section class="new-list">
@@ -45,9 +46,10 @@
       </form>
     </section>
 
-    <section id='firstCategory' class='category'>
+    <section id='firstCategory' class='category watch'>
       <button id='toWatch' type="submit">TO WATCH</button>
-      <section class='toggleList'>
+      <section class='list'>
+        
         <div>
             <label class="check">
                 <input type="checkbox" checked="checked">
@@ -55,37 +57,50 @@
               </label>
             <p>Shrek</p>
         </div>
+       
         <div>
-          <p>Harry Potter</p>
+            <label class="check">
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+              </label>
+            <p>Harry Potter</p>
         </div>
+
       </section>
     </section>
 
 
-    <section class='category'>
+    <section class='category read'>
       <button id='toRead' type="submit">TO READ</button>
-      <section class='toggleList'>
+      <section class='list'>
+          <div>
+              <label class="check">
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+              <p>Good to Great</p>
+          </div>
       </section>
     </section>
 
 
-    <section class='category'>
+    <section class='category eat'>
       <button id='toEat' type="submit">TO EAT</button>
-      <section class='toggleList'>
+      <section class='list'>
       </section>
     </section>
 
 
-    <section class='category'>
+    <section class='category buy'>
       <button id='toBuy' type="submit">TO BUY</button>
-      <section class='toggleList'>
+      <section class='list'>
       </section>
     </section>
 
 
-    <section class='category'>
-      <button id='other' type="submit">OTHER</button>
-      <section class='toggleList'>
+    <section class='category other'>
+      <button id='toOther' type="submit">OTHER</button>
+      <section class='list'>
       </section>
     </section>
 
