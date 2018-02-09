@@ -9,13 +9,13 @@
 //   });;
 // });
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-  $('.check').click(function(e) {
-    e.stopPropagation();
-  });
+//   $('.check').click(function(e) {
+//     e.stopPropagation();
+//   });
 
-});
+// });
 
 // var movieData ={
 //   releaseDate: '...'
