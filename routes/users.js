@@ -8,7 +8,7 @@ module.exports = (getListItemData) => {
   router.get("/", (req, res) => {
     getListItemData()
     .then(function(datum){
-      console.log('Success!');
+      console.log('Successful GET request');
       res.render('index.ejs', { datum: datum } );
 
     })
@@ -19,12 +19,14 @@ module.exports = (getListItemData) => {
   });
 
   router.post("/", (req, res) => {
+    console.log(req.is('json'));
     // Pseudo code for receivng text input from '/'
-    // const text = req.body.'text area'
+    console.log("Successful POST request", req.body);
+    // console.log(req);
     // send the text data to the database
 
     // re render '/'
-
+    res.redirect('/');
 
   });
 

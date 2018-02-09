@@ -20,12 +20,14 @@
     </nav>
 
     <!-- ADD ITEM -->
+      <form class="form-horizontal" action="/" method="POST"  role="form">
     <div class="container new-list">
-        <div class="form-group">
-          <textarea class="form-control" rows="5" id="comment" placeholder="What do you want to do?"></textarea>
+        <div class="form-group" >
+          <textarea class="form-control" rows="5" id="comment" placeholder="What do you want to do?" name="input_list_item"></textarea>
         </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'>ADD ITEM</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'>ADD ITEM</button>
     </div>
+      </form>
 
     <!-- WATCH CATEGORY -->
     <div class="container category">
@@ -35,8 +37,9 @@
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
-                  </label> 
-                  <%= JSON.stringify(datum) %>
+                  </label>
+
+
             </button>
           </section>
     </div>
@@ -49,7 +52,7 @@
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
-                  </label> 
+                  </label>
                   Outliers
             </button>
           </section>
@@ -63,7 +66,7 @@
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
-                  </label> 
+                  </label>
                   Cactus Club
             </button>
           </section>
@@ -77,7 +80,7 @@
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
-                  </label> 
+                  </label>
                   groceries
             </button>
           </section>
@@ -91,12 +94,12 @@
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
-                  </label> 
+                  </label>
                   go skydiving
             </button>
           </section>
     </div>
-  
+
     <!-- Modal -->
     <div class="modal fade" id="listModal" tabindex="-1" role="dialog" aria-labelledby="listModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -108,7 +111,7 @@
             </button>
           </div>
           <div class="modal-body">
-            
+
             <!-- Category Selector -->
             <div class="form-group">
                 <label for="sel1">Category:</label>
@@ -149,12 +152,12 @@
       </div>
     </div>
 
-    
+
     <!-- Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    
+
     <!-- JS APP -->
     <script type="text/javascript" src="/scripts/app.js"></script>
 

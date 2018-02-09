@@ -42,14 +42,14 @@ function getListItemData() {
         datum[b].push({list_item: a , category_id: b });
       }
       resolve(datum);
-      console.log(datum);
+      // console.log('Accessing database');
     });
   });
   return promise;
 
 }
 
-console.log(getListItemData());
+// console.log(getListItemData());
 
 
 exports.getListItemData = getListItemData;
