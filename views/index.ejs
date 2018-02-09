@@ -29,11 +29,14 @@
     </div>
       </form>
 
+
+    <!--CATEGORIES -->
+
     <!-- WATCH CATEGORY -->
     <div class="container category">
         <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList">TO WATCH</button>
           <section id='watchList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal">
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
@@ -48,7 +51,7 @@
     <div class="container category">
         <button id="toRead" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#readList">TO READ</button>
           <section id='readList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal">
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
@@ -62,7 +65,7 @@
     <div class="container category">
         <button id="toEat" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#eatList">TO EAT</button>
           <section id='eatList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal">
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
@@ -76,7 +79,7 @@
     <div class="container category">
         <button id="toBuy" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#buyList">TO BUY</button>
           <section id='buyList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal">
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
@@ -90,7 +93,7 @@
     <div class="container category">
         <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList">TO OTHER</button>
           <section id='otherList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal">
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
@@ -100,12 +103,17 @@
           </section>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="listModal" tabindex="-1" role="dialog" aria-labelledby="listModal" aria-hidden="true">
+
+
+
+    <!-- MODALS -->
+
+    <!-- Modal WATCH -->
+    <div class="modal fade" id="watchModal" tabindex="-1" role="dialog" aria-labelledby="watchModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="listModalTitle">Shrek</h5>
+            <h5 class="modal-title" id="watchModalTitle">Shrek</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -114,8 +122,8 @@
 
             <!-- Category Selector -->
             <div class="form-group">
-                <label for="sel1">Category:</label>
-                <select class="form-control" id="sel1">
+                <label for="selWatchCategory">Category:</label>
+                <select class="form-control" id="selWatchCategory">
                   <option>Watch</option>
                   <option>Read</option>
                   <option>Eat</option>
@@ -126,8 +134,8 @@
 
               <!-- Completion Selector -->
               <div class="form-group">
-                <label for="sel2">Done:</label>
-                <select class="form-control" id="sel2">
+                <label for="selWatchDone">Done:</label>
+                <select class="form-control" id="selWatchDone">
                   <option>Yes</option>
                   <option>No</option>
                 </select>
@@ -153,6 +161,220 @@
     </div>
 
 
+
+
+
+    <!-- Modal READ -->
+    <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="readModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="readModalTitle">Outliers</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <!-- Category Selector -->
+            <div class="form-group">
+                <label for="selReadCategory">Category:</label>
+                <select class="form-control" id="selReadCategory">
+                  <option>Read</option>
+                  <option>Watch</option>                  
+                  <option>Eat</option>
+                  <option>Buy</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Completion Selector -->
+              <div class="form-group">
+                <label for="selReadDone">Done:</label>
+                <select class="form-control" id="selReadDone">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <!-- API DATA Selector -->
+              <div class="container">
+                <div class="container">Release Year:</div>
+                <div class="container">Rating:</div>
+                <div class="container">Author:</div>
+                <div class="container">Genre:</div>
+                <div class="container">Description::</div>
+                <div class="container">Book Cover:</div>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Modal EAT -->
+    <div class="modal fade" id="eatModal" tabindex="-1" role="dialog" aria-labelledby="eatModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eatModalTitle">Cactus Club</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <!-- Category Selector -->
+            <div class="form-group">
+                <label for="selEatCategory">Category:</label>
+                <select class="form-control" id="selEatCategory">
+                  <option>Eat</option>
+                  <option>Watch</option>
+                  <option>Read</option>
+                  <option>Buy</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Completion Selector -->
+              <div class="form-group">
+                <label for="selEatDone">Done:</label>
+                <select class="form-control" id="selEatDone">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <!-- API DATA Selector -->
+              <div class="container">
+                <div class="container">Phone Number:</div>
+                <div class="container">Rating:</div>
+                <div class="container">Address:</div>
+                <div class="container">Menu:</div>
+                <div class="container">Price Range:</div>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Modal BUY -->
+    <div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="buyModalTitle">Groceries</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <!-- Category Selector -->
+            <div class="form-group">
+                <label for="selBuyCategory">Category:</label>
+                <select class="form-control" id="selBuyCategory">
+                  <option>Buy</option>
+                  <option>Watch</option>
+                  <option>Read</option>
+                  <option>Eat</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Completion Selector -->
+              <div class="form-group">
+                <label for="selBuyDone">Done:</label>
+                <select class="form-control" id="selBuyDone">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <!-- API DATA Selector -->
+              <div class="container">
+                <div class="container">Price:</div>
+                <div class="container">Rating:</div>
+                <div class="container">Item Description:</div>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Modal OTHER -->
+    <div class="modal fade" id="otherModal" tabindex="-1" role="dialog" aria-labelledby="otherModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="otherModalTitle">Sky Diving</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <!-- Category Selector -->
+            <div class="form-group">
+                <label for="selOtherCategory">Category:</label>
+                <select class="form-control" id="selOtherCategory">
+                  <option>Other</option>
+                  <option>Watch</option>
+                  <option>Read</option>
+                  <option>Eat</option>
+                  <option>Buy</option>
+                </select>
+              </div>
+
+              <!-- Completion Selector -->
+              <div class="form-group">
+                <label for="selOtherDone">Done:</label>
+                <select class="form-control" id="selOtherDone">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <!-- API DATA Selector -->
+              <div class="container">
+                <div class="container">Picture:</div>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -163,4 +385,3 @@
 
   </body>
 </html>
-
