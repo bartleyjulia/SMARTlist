@@ -5,92 +5,159 @@
     <title>compleet.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <!--Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- compleet Style Sheet CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-     <!-- Font Awesome -->
-     <script src="https://use.fontawesome.com/40bd759758.js"></script>
-
-    <!-- Roboto Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i|Roboto:300,300i,700,700i" rel="stylesheet">
-
-    <!-- Border Box CSS -->
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-
-    <script type="text/javascript" src="/scripts/app.js"></script>
-
-    <!-- Create Format Package -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-
   </head>
 
   <body>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <span class="header">compleet.io</span>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-inverse bg-#62D2FA" style="background-color: #62D2FA;">
+        <a class="navbar-brand" style="color: white; margin: 0 auto; font-size: 2em;">compleet.ai</a>
     </nav>
 
-    <section class="new-list">
-      <form action="/" method="POST">
-        <textarea name="text" placeholder="What do you want to do?"></textarea>
-        <button type='submit'>
-          ADD ITEM
-        </button>
-      </form>
-    </section>
-
-    <section id='firstCategory' class='category'>
-      <button id='toWatch' type="submit">TO WATCH</button>
-      <section class='toggleList'>
-        <div>
-            <label class="check">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-              </label>
-            <p>Shrek</p>
+    <!-- ADD ITEM -->
+    <div class="container new-list">
+        <div class="form-group">
+          <textarea class="form-control" rows="5" id="comment" placeholder="What do you want to do?"></textarea>
         </div>
-        <div>
-          <%= JSON.stringify[datum] %>
+        <button type="button" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'>ADD ITEM</button>
+    </div>
 
-          <p></p>
+    <!-- WATCH CATEGORY -->
+    <div class="container category">
+        <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList">TO WATCH</button>
+          <section id='watchList' class='collapse'>
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+                <label class="check">
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label> 
+                  <%= JSON.stringify(datum) %>
+            </button>
+          </section>
+    </div>
+
+    <!-- READ CATEGORY -->
+    <div class="container category">
+        <button id="toRead" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#readList">TO READ</button>
+          <section id='readList' class='collapse'>
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+                <label class="check">
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label> 
+                  Outliers
+            </button>
+          </section>
+    </div>
+
+    <!-- EAT CATEGORY -->
+    <div class="container category">
+        <button id="toEat" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#eatList">TO EAT</button>
+          <section id='eatList' class='collapse'>
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+                <label class="check">
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label> 
+                  Cactus Club
+            </button>
+          </section>
+    </div>
+
+    <!-- BUY CATEGORY -->
+    <div class="container category">
+        <button id="toBuy" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#buyList">TO BUY</button>
+          <section id='buyList' class='collapse'>
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+                <label class="check">
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label> 
+                  groceries
+            </button>
+          </section>
+    </div>
+
+    <!-- OTHER CATEGORY -->
+    <div class="container category">
+        <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList">TO OTHER</button>
+          <section id='otherList' class='collapse'>
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#listModal">
+                <label class="check">
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label> 
+                  go skydiving
+            </button>
+          </section>
+    </div>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="listModal" tabindex="-1" role="dialog" aria-labelledby="listModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="listModalTitle">Shrek</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+            <!-- Category Selector -->
+            <div class="form-group">
+                <label for="sel1">Category:</label>
+                <select class="form-control" id="sel1">
+                  <option>Watch</option>
+                  <option>Read</option>
+                  <option>Eat</option>
+                  <option>Buy</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Completion Selector -->
+              <div class="form-group">
+                <label for="sel2">Done:</label>
+                <select class="form-control" id="sel2">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <!-- API DATA Selector -->
+              <div class="container">
+                <div class="container">Release Year:</div>
+                <div class="container">Rating:</div>
+                <div class="container">Stars:</div>
+                <div class="container">Director:</div>
+                <div class="container">Genre:</div>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
-      </section>
-    </section>
+      </div>
+    </div>
 
-
-    <section class='category'>
-      <button id='toRead' type="submit">TO READ</button>
-      <section class='toggleList'>
-        <p> </p>
-      </section>
-    </section>
-
-
-    <section class='category'>
-      <button id='toEat' type="submit">TO EAT</button>
-      <section class='toggleList'>
-      </section>
-    </section>
-
-
-    <section class='category'>
-      <button id='toBuy' type="submit">TO BUY</button>
-      <section class='toggleList'>
-      </section>
-    </section>
-
-
-    <section class='category'>
-      <button id='other' type="submit">OTHER</button>
-      <section class='toggleList'>
-      </section>
-    </section>
+    
+    <!-- Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
+    <!-- JS APP -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
 
   </body>
 </html>
+

@@ -8,3 +8,19 @@
 //     }
 //   });;
 // });
+
+// $(document).ready(function() {
+
+//   $('.check').click(function(e) {
+//     e.stopPropagation();
+//   });
+
+// });
+
+// var movieData ={
+//   releaseDate: '...'
+// }
+
+// function renderMovieData(data) {
+  
+// }

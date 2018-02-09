@@ -1,80 +1,18 @@
 body {
-  background-color: #5E86EA;
-  max-width: 600px;
-  margin: 0 auto;
-  font-family: Helvetica;
+  background-color: #486ecf;
 }
 
-#nav-bar {
-  background-color: #62D2FA;
-  color: #ffff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  line-height: 60px;
-  font-size: 2em;
-  text-align: center;
-}
-
-.new-list {
-  padding: 0px;
-  box-sizing: border-box;
-  background-color: #eee;
-  margin: 0 auto;
-  margin-top: 85px;
-  margin-right: 10px;
-  margin-left: 10px;
-  border-radius: 5px;
-  height: 154px;
-}
-
-.new-list textarea {
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  height: 100px;
-  padding: 45px;
-  padding-left: 40px;
-  display: block;
-  border-radius: 5px;
-  border-color: #eee;
-  outline-color: #62D2FA;
-  text-align: center;
-}
-
-.new-list button {
-  margin-left: 0px;
-  margin-top: 0px;
-  color: white;
-  height: 62px;
-  background-color: #E6AC69;
-  border-radius: 0 0 5px 5px;
-  width: 100%;
-}
-
-#firstCategory {
+.container {
   margin-top: 30px;
 }
 
-.category {
-  padding: 0px;
-  box-sizing: border-box;
-  background-color: #eee;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-right: 10px;
-  margin-left: 10px;
-  border-radius: 5px;
+textarea {
+  text-align: center;
 }
 
-.category button {
-  margin-left: 0px;
-  margin-top: 0px;
-  color: white;
-  height: 62px;
-  width: 100%;
-  border: none;
+.btn-secondary {
+  background-color: #eee;
+  color: grey;
 }
 
 #toWatch {
@@ -93,25 +31,6 @@ body {
   background-color: #E1D371;
 }
 
-#other {
+#toOther {
   background-color: #65CAD9;
-}
-
-.toggleList div {
-  border: 1px solid black;
-  vertical-align: middle;
-  display: flex;
-  justify-content: space-between;
-}
-
-.toggleList div .check {
-  padding: 20px;
-}
-
-.toggleList div p {
-  padding: 20px;
-  margin: 0;
-  text-align: right;
-  padding-right: 30px;
-  display: inline-block;
 }
