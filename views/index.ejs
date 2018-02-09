@@ -32,7 +32,7 @@
     </nav>
 
     <!-- New List Item -->
-    <section class="new-list">
+    <section class="container new-list">
       <form action="/" method="POST">
         <textarea name="text" placeholder="What do you want to do?"></textarea>
         <button type='submit'>
@@ -42,121 +42,104 @@
     </section>
 
     <!-- Categories -->
-    <section id='firstCategory' class='category watch'>
-      <button id='toWatch' type="submit">TO WATCH</button>
-      <section class='list-ai'>
+
+    <!-- WATCH Category -->
+    <section id='firstCategory' class='container category watch'>
+      <button id='toWatch' data-toggle='collapse' data-target='#watchList'>TO WATCH</button>
+      <section id='watchList' class='collapse'>
         
-        <div class='listItem'>
+        <button type="button" class="btn btn-primary btn-outline listItem" data-toggle="modal" data-target="#listModal">
             <label class="check">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-              </label>
+              <input type="checkbox" >
+              <span class="checkmark"></span>
+            </label> 
             <p>Shrek</p>
-        </div>
+        </button>
        
-        <div class='listItem'>
-            <label class="check">
+        <button type="button" class="btn btn-primary listItem" data-toggle="modal" data-target="#listModal">
+          <label class="check">
+            <input type="checkbox" >
+            <span class="checkmark"></span>
+          </label> 
+          <p>Star Wars</p>
+        </button>
+      </section>
+    </section>
+
+    <!-- READ Category -->
+    <section class='container category read'>
+      <button id='toRead' data-toggle='collapse' data-target='#readList'>TO READ</button>
+      <section id='readList'>
+          <button type="button" class="btn btn-primary listItem" data-toggle="modal" data-target="#listModal">
+              <label class="check">
                 <input type="checkbox" >
                 <span class="checkmark"></span>
-              </label>
-            <p>Harry Potter</p>
-        </div>
-
-      </section>
-    </section>
-
-
-    <section class='category read'>
-      <button id='toRead' type="submit">TO READ</button>
-      <section class='list-ai'>
-          <div class='listItem'>
-              <label class="check">
-                  <input type="checkbox" >
-                  <span class="checkmark"></span>
-                </label>
-              <p>Good to Great</p>
-          </div>
-      </section>
-    </section>
-
-    <section class='category eat'>
-      <button id='toEat' type="submit">TO EAT</button>
-      <section class='list-ai'>
-          <div class='listItem'>
-              <label class="check">
-                  <input type="checkbox" >
-                  <span class="checkmark"></span>
-                </label>
-              <p>Cafe Medina</p>
-          </div>
-      </section>
-    </section>
-
-
-    <section class='category buy'>
-      <button id='toBuy' type="submit">TO BUY</button>
-      <section class='list-ai'>
-      </section>
-    </section>
-
-
-    <section class='category other'>
-      <button id='toOther' type="submit">OTHER</button>
-      <section class='list-ai'>
-      </section>
-    </section>
-
-    <section class='modal-ai'>
-
-      <div class='modal-content'>
-        <div class='modal-header'>
-          <button class='modal-close'>X</button>
-          <h2>Shrek</h2>
-        </div>
-
-        <div class='modal-category'>
-          <p>Category:</p>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Category
+              </label> 
+              <p>Harry Potter</p>
             </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Watch</a>
-              <a class="dropdown-item" href="#">Read</a>
-              <a class="dropdown-item" href="#">Eat</a>
-              <a class="dropdown-item" href="#">Buy</a>
-              <a class="dropdown-item" href="#">Other</a>
+      </section>
+    </section>
+
+    <!-- EAT Category -->
+    <section class='container category eat'>
+      <button id='toEat' data-toggle='collapse' data-target='#eatList'>TO EAT</button>
+      <section id='eatList'>
+          <button type="button" class="btn btn-primary listItem" data-toggle="modal" data-target="#listModal">
+            <label class="check">
+              <input type="checkbox" >
+              <span class="checkmark"></span>
+            </label> 
+            <p>Cafe Medina</p>
+          </button>
+      </section>
+    </section>
+
+    <!-- BUY Category -->
+    <section class='container category buy'>
+      <button id='toBuy' data-toggle='collapse' data-target='#buyList'>TO BUY</button>
+      <section id='buyList'>
+      </section>
+    </section>
+
+    <!-- OTHER Category -->
+    <section class='container category other'>
+      <button id='toOther' data-toggle='collapse' data-target='#otherList'>OTHER</button>
+      <section id='otherList'>
+      </section>
+    </section>
+
+    <!--MODAL-->
+
+    <div class="modal fade" id="listModal" tabindex="-1" role="dialog" aria-labelledby="listModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="listModalTitle">Shrek</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <div class="modal-body">
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
-        </div>
-
-        <div class='modal-complete'>
-          <p>Done:</p>
-          <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">No</a>
-                <a class="dropdown-item" href="#">Yes</a>
-              </div>
-            </div>
-        </div>
-
-        <div class='modal-body'>
-          <h3>Movie Information:</h3>
         </div>
       </div>
-    </section>   
+      </div>
+    </section> 
     
     <!-- Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-        
+
     <!-- JS APP -->
     <script type="text/javascript" src="/scripts/app.js"></script>
- 
+
   </body>
 </html>
 

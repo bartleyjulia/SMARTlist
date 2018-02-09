@@ -98,93 +98,22 @@ body {
   background-color: #65CAD9;
 }
 
-.list-ai div {
-  border-bottom: 1px solid black;
-  vertical-align: middle;
-  display: flex;
-  justify-content: space-between;
+.listItem {
   background-color: #F1EFEF;
-  z-index: 0;
-}
-
-.list-ai div:hover {
-  background-color: #AAAAAA;
-  color: white;
-}
-
-.list-ai .check {
-  padding: 20px;
-  padding-left: 30px;
-}
-
-.list-ai div p{
-  padding: 20px;
-  margin: 0;
-  text-align: right;
-  padding-right: 30px;
-  display: inline-block
-}
-
-.modal-ai {
-  visibility: hidden;
-  position: fixed;
-  color: white;
-  top: 85px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 10px;
-  max-width: 580px;
-  max-height: 700px;
-  background-color: rgba(0,0,0,0.78);
-  margin: 0 auto;
-  border-radius: 5px;
-  height: 600px;
-  z-index: 1000;
-}
-
-.modal-ai.active {
-  visibility: visible;
-  z-index: 100;
-}
-
-.modal-content {
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
-  font-size: 20px;
-}
-
-.modal-content.active {
-  visibility: visible;
-  z-index: 100;
-}
-
-.modal-ai .modal-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.modal-close {
-  font-size: 2em;
-  border-radius: 50px;
-  border: 2px solid whitesmoke;
-  background-color: #BDBDBD;
-  color: white;
-  width: 50px;
-  margin: 20px;
   vertical-align: middle;
-}
-
-.modal-ai h2{
-  font-size: 3em;
-  margin: 0 auto;
-  margin-top: 15px;
-}
-
-.modal-category {
   display: flex;
   justify-content: space-between;
-  padding: 30px;
-  font-size: 20px;
+  padding-top: 20px;
+}
+
+.listItem p {
+  color: rgb(65, 65, 65);
+}
+
+.listItem:hover {
+  background-color: #AAAAAA;
+}
+
+.listItem:hover p {
+  color: white;
 }
