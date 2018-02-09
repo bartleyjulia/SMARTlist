@@ -50,7 +50,7 @@
       <button id='toWatch' type="submit">TO WATCH</button>
       <section class='list'>
         
-        <div>
+        <div class='listItem'>
             <label class="check">
                 <input type="checkbox" checked="checked">
                 <span class="checkmark"></span>
@@ -58,7 +58,7 @@
             <p>Shrek</p>
         </div>
        
-        <div>
+        <div class='listItem'>
             <label class="check">
                 <input type="checkbox" >
                 <span class="checkmark"></span>
@@ -73,20 +73,33 @@
     <section class='category read'>
       <button id='toRead' type="submit">TO READ</button>
       <section class='list'>
-          <div>
+          <div class='listItem'>
               <label class="check">
                   <input type="checkbox" >
                   <span class="checkmark"></span>
                 </label>
               <p>Good to Great</p>
+                <!-- <div class='modal-overlay'>
+                  <div class='modal-content'>
+                    <p>Good to Great</p>
+                    <p>Release Year:     2001</p>
+                    <button class='modal-close'>Close</button>
+                  </div>
+                </div> -->
           </div>
       </section>
     </section>
 
-
     <section class='category eat'>
       <button id='toEat' type="submit">TO EAT</button>
       <section class='list'>
+          <div class='listItem'>
+              <label class="check">
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+              <p>Cafe Medina</p>
+          </div>
       </section>
     </section>
 
@@ -104,5 +117,13 @@
       </section>
     </section>
 
+    <section class='modal'>
+      <div class='modal-content'>
+        <button>X</button>
+        <h2>Shrek</h2>
+      </div>
+    </section>
+
   </body>
 </html>
+

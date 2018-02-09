@@ -31,4 +31,23 @@ $(document).ready(function() {
     $('.other .list').slideToggle('fast');
   });
 
+  $('.listItem').click(function() {
+    $('.modal, .modal-content').addClass('active');
+  });
+
+  $('.modal button').click(function(e) {
+    e.stopPropagation();
+    $('.modal, .modal-content').removeClass('active');
+    console.log('test');
+  });
+
+
 });
+
+// var movieData ={
+//   releaseDate: '...'
+// }
+
+// function renderMovieData(data) {
+  
+// }

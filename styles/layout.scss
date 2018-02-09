@@ -15,6 +15,7 @@ body {
   line-height: 60px;
   font-size: 2em;
   text-align: center;
+  z-index: 10000;
 }
 
 .new-list {
@@ -102,6 +103,13 @@ body {
   vertical-align: middle;
   display: flex;
   justify-content: space-between;
+  background-color: #F1EFEF;
+  z-index: 0;
+}
+
+.list div:hover {
+  background-color: #AAAAAA;
+  color: white;
 }
 
 .list .check {
@@ -115,4 +123,52 @@ body {
   text-align: right;
   padding-right: 30px;
   display: inline-block
+}
+
+.modal {
+  visibility: hidden;
+  position: fixed;
+  color: white;
+  top: 85px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  max-width: 580px;
+  max-height: 700px;
+  background-color: rgba(0,0,0,0.78);
+  margin: 0 auto;
+  border-radius: 5px;
+  height: 600px;
+  z-index: 1000;
+  display: block;
+}
+
+.modal.active {
+  visibility: visible;
+  z-index: 100;
+}
+
+.modal-content.active {
+  visibility: visible;
+  z-index: 100;
+}
+
+.modal button {
+  font-size: 2em;
+  border-radius: 50px;
+  border: 1px solid whitesmoke;
+  background-color: #BDBDBD;
+  color: white;
+  width: 42px;
+  margin: 20px;
+  vertical-align: middle;
+}
+
+.modal h2{
+  font-size: 3em;
+  margin: 0 auto;
+  vertical-align: middle;
+  margin-top: 2px;
+  display: inline-block;
 }
