@@ -5,7 +5,7 @@ body {
   font-family: Helvetica;
 }
 
-#nav-bar {
+#nav-bar-ai {
   background-color: #62D2FA;
   color: #ffff;
   position: fixed;
@@ -98,8 +98,8 @@ body {
   background-color: #65CAD9;
 }
 
-.list div {
-  border: 1px solid black;
+.list-ai div {
+  border-bottom: 1px solid black;
   vertical-align: middle;
   display: flex;
   justify-content: space-between;
@@ -107,17 +107,17 @@ body {
   z-index: 0;
 }
 
-.list div:hover {
+.list-ai div:hover {
   background-color: #AAAAAA;
   color: white;
 }
 
-.list .check {
+.list-ai .check {
   padding: 20px;
   padding-left: 30px;
 }
 
-.list div p{
+.list-ai div p{
   padding: 20px;
   margin: 0;
   text-align: right;
@@ -125,7 +125,7 @@ body {
   display: inline-block
 }
 
-.modal {
+.modal-ai {
   visibility: hidden;
   position: fixed;
   color: white;
@@ -141,12 +141,18 @@ body {
   border-radius: 5px;
   height: 600px;
   z-index: 1000;
-  display: block;
 }
 
-.modal.active {
+.modal-ai.active {
   visibility: visible;
   z-index: 100;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  font-size: 20px;
 }
 
 .modal-content.active {
@@ -154,21 +160,31 @@ body {
   z-index: 100;
 }
 
-.modal button {
+.modal-ai .modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-close {
   font-size: 2em;
   border-radius: 50px;
-  border: 1px solid whitesmoke;
+  border: 2px solid whitesmoke;
   background-color: #BDBDBD;
   color: white;
-  width: 42px;
+  width: 50px;
   margin: 20px;
   vertical-align: middle;
 }
 
-.modal h2{
+.modal-ai h2{
   font-size: 3em;
   margin: 0 auto;
-  vertical-align: middle;
-  margin-top: 2px;
-  display: inline-block;
+  margin-top: 15px;
+}
+
+.modal-category {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  font-size: 20px;
 }

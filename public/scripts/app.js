@@ -12,33 +12,33 @@
 $(document).ready(function() {
   
   $('#toWatch').click(function(){
-    $('.watch .list').slideToggle('fast');
+    $('.watch .list-ai').slideToggle('fast');
+    console.log('test');
   });
 
   $('#toRead').click(function(){
-    $('.read .list').slideToggle('fast');
+    $('.read .list-ai').slideToggle('fast');
   });
 
   $('#toEat').click(function(){
-    $('.eat .list').slideToggle('fast');
+    $('.eat .list-ai').slideToggle('fast');
   });
 
   $('#toBuy').click(function(){
-    $('.buy .list').slideToggle('fast');
+    $('.buy .list-ai').slideToggle('fast');
   });
 
   $('#toOther').click(function(){
-    $('.other .list').slideToggle('fast');
+    $('.other .list-ai').slideToggle('fast');
   });
 
   $('.listItem').click(function() {
     $('.modal, .modal-content').addClass('active');
   });
 
-  $('.modal button').click(function(e) {
+  $('.modal-close').click(function(e) {
     e.stopPropagation();
     $('.modal, .modal-content').removeClass('active');
-    console.log('test');
   });
 
 
