@@ -20,14 +20,14 @@
     </nav>
 
     <!-- ADD ITEM -->
-      <form class="form-horizontal" action="/" method="POST"  role="form">
-    <div class="container new-list">
+    <form class="form-horizontal" action="/" method="POST"  role="form">
+      <div class="container new-list">
         <div class="form-group" >
           <textarea class="form-control" rows="5" id="comment" placeholder="What do you want to do?" name="input_list_item"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'>ADD ITEM</button>
-    </div>
-      </form>
+        <button id="addButton"type="submit" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'>ADD ITEM</button>
+      </div>
+    </form>
 
 
     <!--CATEGORIES -->
@@ -36,14 +36,15 @@
     <div class="container category">
         <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList">TO WATCH</button>
           <section id='watchList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal">
+            <% for(const item of datum[1]) {%>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal">
                 <label class="check">
                     <input type="checkbox" >
                     <span class="checkmark"></span>
                   </label>
-
-
-            </button>
+                  <%= item.list_item %>
+              </button>
+            <% } %>
           </section>
     </div>
 
@@ -51,13 +52,15 @@
     <div class="container category">
         <button id="toRead" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#readList">TO READ</button>
           <section id='readList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal">
-                <label class="check">
-                    <input type="checkbox" >
-                    <span class="checkmark"></span>
-                  </label>
-                  Outliers
-            </button>
+            <% for(const item of datum[4]) {%>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal">
+                  <label class="check">
+                      <input type="checkbox" >
+                      <span class="checkmark"></span>
+                    </label>
+                    <%= item.list_item %>
+              </button>
+            <% } %>
           </section>
     </div>
 
@@ -65,13 +68,15 @@
     <div class="container category">
         <button id="toEat" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#eatList">TO EAT</button>
           <section id='eatList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal">
-                <label class="check">
-                    <input type="checkbox" >
-                    <span class="checkmark"></span>
-                  </label>
-                  Cactus Club
-            </button>
+            <% for(const item of datum[2]) { %>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal">
+                  <label class="check">
+                      <input type="checkbox" >
+                      <span class="checkmark"></span>
+                    </label>
+                    <%= item.list_item %>
+              </button>
+            <% } %>
           </section>
     </div>
 
@@ -79,13 +84,15 @@
     <div class="container category">
         <button id="toBuy" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#buyList">TO BUY</button>
           <section id='buyList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal">
-                <label class="check">
-                    <input type="checkbox" >
-                    <span class="checkmark"></span>
-                  </label>
-                  groceries
-            </button>
+             <% for (const item of datum[3]) { %> 
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal">
+                  <label class="check">
+                      <input type="checkbox" >
+                      <span class="checkmark"></span>
+                    </label>
+                    <%= item.list_item %>
+              </button>
+            <% } %>
           </section>
     </div>
 
@@ -93,13 +100,15 @@
     <div class="container category">
         <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList">TO OTHER</button>
           <section id='otherList' class='collapse'>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal">
-                <label class="check">
-                    <input type="checkbox" >
-                    <span class="checkmark"></span>
-                  </label>
-                  go skydiving
-            </button>
+            <% for (const item in datum[5]) { %>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal">
+                  <label class="check">
+                      <input type="checkbox" >
+                      <span class="checkmark"></span>
+                    </label>
+                    <%= item.list_item %>
+              </button>
+            <% } %>
           </section>
     </div>
 
@@ -112,12 +121,14 @@
     <div class="modal fade" id="watchModal" tabindex="-1" role="dialog" aria-labelledby="watchModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
+
           <div class="modal-header">
             <h5 class="modal-title" id="watchModalTitle">Shrek</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
           <div class="modal-body">
 
             <!-- Category Selector -->
@@ -142,12 +153,31 @@
               </div>
 
               <!-- API DATA Selector -->
-              <div class="container">
-                <div class="container">Release Year:</div>
-                <div class="container">Rating:</div>
-                <div class="container">Stars:</div>
-                <div class="container">Director:</div>
-                <div class="container">Genre:</div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 col-sm-6">Release Year:</div>
+                  <div class="col-4 col-sm-6">2001</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8 col-sm-6">Rating:</div>
+                    <div class="col-4 col-sm-6">PG</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8 col-sm-6">Stars:</div>
+                    <div class="col-4 col-sm-6">Mike Myers</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8 col-sm-6">Director:</div>
+                    <div class="col-4 col-sm-6">Michael Bay</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8 col-sm-6">Genre:</div>
+                    <div class="col-4 col-sm-6">Comedy, Action, Animation</div>
+                </div>
               </div>
 
 
@@ -197,15 +227,42 @@
                 </select>
               </div>
 
+
               <!-- API DATA Selector -->
-              <div class="container">
-                <div class="container">Release Year:</div>
-                <div class="container">Rating:</div>
-                <div class="container">Author:</div>
-                <div class="container">Genre:</div>
-                <div class="container">Description::</div>
-                <div class="container">Book Cover:</div>
-              </div>
+              <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-8 col-sm-6">Release Year:</div>
+                    <div class="col-4 col-sm-6">2006</div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-8 col-sm-6">Rating:</div>
+                      <div class="col-4 col-sm-6">8.9</div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-8 col-sm-6">Author:</div>
+                      <div class="col-4 col-sm-6">Malcolm Gladwell</div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-8 col-sm-6">Genre:</div>
+                      <div class="col-4 col-sm-6">Non-Fiction</div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-8 col-sm-6">Description:</div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-sm-6">Outliers: The Story of Success is the third non-fiction book written by Malcolm Gladwell and published by Little, Brown and Company on November 18, 2008. In Outliers, Gladwell examines the factors that contribute to high levels of success.</div>                    
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-8 col-sm-6">Book Cover:</div>
+                      <img class="img-fluid img-thumbnail" src="https://images-na.ssl-images-amazon.com/images/I/71GLAwC9cPL.jpg">
+                  </div>
+                </div>
 
 
           </div>
