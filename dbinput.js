@@ -12,12 +12,20 @@ var knex = require('knex')({
   }
 });
 
-knex('user_lists')
-  .insert({ list_item: /** from text input**/, user_id: 1, category_id:/* from categorizer/algorithm/slection box?*/, completed: false}).asCallback(function(err, result ){
-    if (err) {
-      return console.error("error running query", err);
-    }
 
-  console.log('Inserted!!!!');
+function saveInputToDatabase(input) {
+  const newItem = { list_item: input, user_id: 1, category_id: 1, completed: false};
+  const promise = new Promise( function(resolve, reject) {
+  knex.insert(newItem).into('user_lists').asCallback(function(err, result ){
+       if (err) {
+        console.log(err);
+        return reject(err);
+      }
+      resolve();
+      console.log('Inserted!');
+    });
+  });
+  return promise;
+}
 
-  })
+exports.saveInputToDatabase = saveInputToDatabase;

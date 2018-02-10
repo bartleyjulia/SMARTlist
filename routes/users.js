@@ -3,7 +3,7 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (getListItemData) => {
+module.exports = (getListItemData, saveInputToDatabase) => {
 
   router.get("/", (req, res) => {
     getListItemData()
@@ -19,9 +19,9 @@ module.exports = (getListItemData) => {
   });
 
   router.post("/", (req, res) => {
-    console.log(req.is('json'));
     // Pseudo code for receivng text input from '/'
-    console.log("Successful POST request", req.body);
+    const item = req.body['input_list_item'];
+    saveInputToDatabase(item);
     // console.log(req);
     // send the text data to the database
 
