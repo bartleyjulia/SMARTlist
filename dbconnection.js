@@ -26,6 +26,11 @@ function getListItemData() {
       return category;
     }
 
+    function getID(param) {
+      let itemID = param['id'];
+      return itemID;
+    }
+
     knex.select('*').from('user_lists').asCallback(function (err, result){
       if (err) {
         return reject(err);
@@ -35,11 +40,12 @@ function getListItemData() {
       for (var item of result) {
         let a = getListItem(item);
         let b = getCategory(item);
+        let c = getID(item);
 
         if (datum[b] === undefined) {
         datum[b] = [];
         }
-        datum[b].push({list_item: a , category_id: b });
+        datum[b].push({list_item: a , category_id: b, item_id: c });
       }
       resolve(datum);
     });

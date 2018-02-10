@@ -25,10 +25,9 @@
         <div class="form-group" >
           <textarea class="form-control" rows="5" id="comment" placeholder="What do you want to do?" name="input_list_item"></textarea>
         </div>
-        <button id="addButton"type="submit" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'>ADD ITEM</button>
+        <button id="addButton" method="post" type="submit" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'>ADD ITEM</button>
       </div>
     </form>
-
 
     <!--CATEGORIES -->
 
@@ -37,11 +36,8 @@
         <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList">TO WATCH</button>
           <section id='watchList' class='collapse'>
             <% for(const item of datum[1]) {%>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal">
-                <label class="check">
-                    <input type="checkbox" >
-                    <span class="checkmark"></span>
-                  </label>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                   <%= item.list_item %>
               </button>
             <% } %>
@@ -53,7 +49,7 @@
         <button id="toRead" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#readList">TO READ</button>
           <section id='readList' class='collapse'>
             <% for(const item of datum[4]) {%>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal">
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.id}) %>'>
                   <label class="check">
                       <input type="checkbox" >
                       <span class="checkmark"></span>
@@ -69,7 +65,7 @@
         <button id="toEat" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#eatList">TO EAT</button>
           <section id='eatList' class='collapse'>
             <% for(const item of datum[2]) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal">
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.id}) %>'>
                   <label class="check">
                       <input type="checkbox" >
                       <span class="checkmark"></span>
@@ -85,7 +81,7 @@
         <button id="toBuy" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#buyList">TO BUY</button>
           <section id='buyList' class='collapse'>
              <% for (const item of datum[3]) { %> 
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal">
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.id}) %>'>
                   <label class="check">
                       <input type="checkbox" >
                       <span class="checkmark"></span>
@@ -101,7 +97,7 @@
         <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList">TO OTHER</button>
           <section id='otherList' class='collapse'>
             <% for (const item in datum[5]) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal">
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.id}) %>'>
                   <label class="check">
                       <input type="checkbox" >
                       <span class="checkmark"></span>
@@ -123,7 +119,7 @@
         <div class="modal-content">
 
           <div class="modal-header">
-            <h5 class="modal-title" id="watchModalTitle">Shrek</h5>
+            <h5 class="modal-title" id="watchModalTitle">MOVIE MODAL</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -147,8 +143,8 @@
               <div class="form-group">
                 <label for="selWatchDone">Done:</label>
                 <select class="form-control" id="selWatchDone">
-                  <option>Yes</option>
                   <option>No</option>
+                  <option>Yes</option>
                 </select>
               </div>
 
@@ -199,18 +195,17 @@
 
 
 
-
-
     <!-- Modal READ -->
     <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="readModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="readModalTitle">Outliers</h5>
+            <h5 class="modal-title" id="readModalTitle">BOOK MODAL</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
           <div class="modal-body">
 
             <!-- Category Selector -->
@@ -229,8 +224,8 @@
               <div class="form-group">
                 <label for="selReadDone">Done:</label>
                 <select class="form-control" id="selReadDone">
-                  <option>Yes</option>
                   <option>No</option>
+                  <option>Yes</option>
                 </select>
               </div>
 
@@ -239,22 +234,22 @@
               <div class="container-fluid">
                   <div class="row">
                     <div class="col-8 col-sm-6">Release Year:</div>
-                    <div class="col-4 col-sm-6">2006</div>
+                    <div id="readYear" class="col-4 col-sm-6">2006</div>
                   </div>
                   <br>
                   <div class="row">
                       <div class="col-8 col-sm-6">Rating:</div>
-                      <div class="col-4 col-sm-6">8.9</div>
+                      <div id="readRating" class="col-4 col-sm-6">8.9</div>
                   </div>
                   <br>
                   <div class="row">
                       <div class="col-8 col-sm-6">Author:</div>
-                      <div class="col-4 col-sm-6">Malcolm Gladwell</div>
+                      <div id="readAuthor" class="col-4 col-sm-6">Malcolm Gladwell</div>
                   </div>
                   <br>
                   <div class="row">
                       <div class="col-8 col-sm-6">Genre:</div>
-                      <div class="col-4 col-sm-6">Non-Fiction</div>
+                      <div id="readGenre" class="col-4 col-sm-6">Non-Fiction</div>
                   </div>
                   <br>
                   <div class="row">
@@ -292,7 +287,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="eatModalTitle">Cactus Club</h5>
+            <h5 class="modal-title" id="eatModalTitle">EAT MODAL</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -315,8 +310,8 @@
               <div class="form-group">
                 <label for="selEatDone">Done:</label>
                 <select class="form-control" id="selEatDone">
-                  <option>Yes</option>
                   <option>No</option>
+                  <option>Yes</option>
                 </select>
               </div>
 
@@ -325,12 +320,12 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-8 col-sm-6">Phone Number:</div>
-                  <div class="col-4 col-sm-6">(604) 620-7410</div>
+                  <div id="eatPhone" class="col-4 col-sm-6">(604) 620-7410</div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-8 col-sm-6">Rating:</div>
-                    <div class="col-4 col-sm-6">4/5</div>
+                    <div id="eatRating" class="col-4 col-sm-6">4/5</div>
                 </div>
                 <br>
                 <div class="row">
@@ -366,7 +361,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="buyModalTitle">Groceries</h5>
+            <h5 class="modal-title" id="buyModalTitle">BUY MODAL</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -389,8 +384,8 @@
               <div class="form-group">
                 <label for="selBuyDone">Done:</label>
                 <select class="form-control" id="selBuyDone">
-                  <option>Yes</option>
-                  <option>No</option>
+                    <option>No</option>
+                    <option>Yes</option>
                 </select>
               </div>
 
@@ -398,17 +393,17 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-8 col-sm-6">Price:</div>
-                  <div class="col-4 col-sm-6">$30</div>
+                  <div id="buyPrice" class="col-4 col-sm-6">$30</div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-8 col-sm-6">Rating:</div>
-                    <div class="col-4 col-sm-6">4/5</div>
+                    <div id="buyRating" class="col-4 col-sm-6">4/5</div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-8 col-sm-6">Item Description:</div>
-                    <div class="col-4 col-sm-6">Food</div>
+                    <div id="buyItemDescription" class="col-4 col-sm-6">Food</div>
                 </div>
               </div>
 
@@ -430,7 +425,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="otherModalTitle">Sky Diving</h5>
+            <h5 class="modal-title" id="otherModalTitle">OTHER MODAL</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -453,8 +448,8 @@
               <div class="form-group">
                 <label for="selOtherDone">Done:</label>
                 <select class="form-control" id="selOtherDone">
-                  <option>Yes</option>
                   <option>No</option>
+                  <option>Yes</option>
                 </select>
               </div>
 
