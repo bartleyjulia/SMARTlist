@@ -10,9 +10,17 @@ textarea {
   text-align: center;
 }
 
+.btn {
+  border: none;
+}
+
 .btn-secondary {
   background-color: #eee;
   color: grey;
+}
+
+#addButton {
+  background-color: orange;
 }
 
 #toWatch {
