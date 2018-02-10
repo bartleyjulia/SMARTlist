@@ -28,7 +28,7 @@ classifier.learn('book, author, by, paper, album, booklet, textbook, print, fict
 classifier.learn('eat, try, go to, food, pizza, burger, kitchen, taste, restaurants, bar, cafeteria, coffee', '2')
 classifier.learn('eat, diner, grill, eatery, pizzeria, cafe, eating, fast-food, lunch, tavern', '2')
 classifier.learn('eat, cook, cooking, bake, fry, fries, cusine, bread, meal, meat, snack, bite, eats, menu', '2')
-classifier.learn('cactus, salad, chinese, butcher, knife, fork, deep-fried, deep fried, oven, hungry', '2')
+classifier.learn('cactus, salad, chinese, butcher, knife, fork, deep-fried, deep fried, oven, hungry, sandwich, lunch, dinner, breakfast', '2')
 
 // LEARN BUY
 classifier.learn('purchase, buy, get, find, shop, shopping, mall, store, where, bag, online, amazon', '3');
@@ -38,12 +38,14 @@ classifier.learn('purchase, order, aquire, source, shop, shopping, mall, store, 
 classifier.learn('help, call, check, text, find, pay', '5');
 classifier.learn('phone, call, return, run, remember to, remember', '5');
 
+// Helper function to categorize input via category_id
 function categorizeInput(input) {
   let inputLower = input.toLowerCase();
   let category = classifier.categorize(input);
   return(category);
 };
 
+// Function to save input into database
 function saveInputToDatabase(input) {
   let inputCategory = categorizeInput(input);
   const newItem = { list_item: input, user_id: 1, category_id: inputCategory, completed: false};

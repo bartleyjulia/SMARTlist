@@ -1,53 +1,46 @@
 // WATCH
-$(function(){
-  $('#watchList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#watchModalTitle').text(data.title);
-    }
-  });
+$('#watchList').on('click', function(evt){
+  if(evt.target.dataset.itemInfo){
+    var data = JSON.parse(evt.target.dataset.itemInfo);
+    $('#watchModalTitle').text(data.title);
+  }
 });
 
 
 // READ
-$(function(){
-  $('#readList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#readModalTitle').text(data.title);
-    }
-  });
+$('#readList').on('click', function(evt){
+  if(evt.target.dataset.itemInfo){
+    var data = JSON.parse(evt.target.dataset.itemInfo);
+    $('#readModalTitle').text(data.title);
+  }
 });
 
 // EAT
-$(function(){
-  $('#eatList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#eatModalTitle').text(data.title);
-    }
-  });
+$('#eatList').on('click', function(evt){
+  if(evt.target.dataset.itemInfo){
+    var data = JSON.parse(evt.target.dataset.itemInfo);
+    $('#eatModalTitle').text(data.title);
+  }
 });
 
 // BUY
-$(function(){
-  $('#buyList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#buyModalTitle').text(data.title);
-    }
-  });
+$('#buyList').on('click', function(evt){
+  if(evt.target.dataset.itemInfo){
+    var data = JSON.parse(evt.target.dataset.itemInfo);
+    $('#buyModalTitle').text(data.title);
+  }
 });
 
 // OTHER
-$(function(){
-  $('#otherList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#otherModalTitle').text(data.title);
-    }
-  });
+$('#otherList').on('click', function(evt){
+  if(evt.target.dataset.itemInfo){
+    var data = JSON.parse(evt.target.dataset.itemInfo);
+    $('#otherModalTitle').text(data.title);
+  }
 });
+
+// DELETE BUTTON - Function to delete list item
+
 
   // // Function to load and render tweets on the Tweet Newsfeed using AJAX
   // function loadAndRenderTweet() {
