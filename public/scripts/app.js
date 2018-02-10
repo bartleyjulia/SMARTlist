@@ -1,6 +1,3 @@
-// CHECKBOX
-
-
 // WATCH
 $(function(){
   $('#watchList').on('click', function(evt){
@@ -51,24 +48,6 @@ $(function(){
     }
   });
 });
-
-// Can't be empty
-$('#addButton').on('submit', function() {
-  // Prevent the default behaviour of new page refresh
-  // e.preventDefault();
-  // Get data of form
-  // var data = $('.form-group').serialize();
-  window.alert('test');
-  // Condition for text between char count 0 - 140
-  // if ($('textarea').val() === "") {
-  //   window.alert("You need to add something first!");
-  // } else {
-  //   $.post('/tweets', data)
-  // }
-  });
-
-
-
 
   // // Function to load and render tweets on the Tweet Newsfeed using AJAX
   // function loadAndRenderTweet() {
