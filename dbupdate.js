@@ -31,4 +31,26 @@ function deleteItemFromDatabase(item_identifier) {
 
 exports.deleteItemFromDatabase = deleteItemFromDatabase;
 
+function updateCategoryID(itemID, newCategoryID) {
+  console.log(itemID);
+  console.log(newCategoryID);
 
+  const promise = new Promise( function(resolve, reject) {
+    knex("user_lists")
+      .where('list_item', itemID)
+      .update({'category_id': newCategoryID})
+      .asCallback(function(err, result ){
+        if (err) {
+          console.log(err);
+          return reject(err);
+        }
+        resolve();
+        console.log('Updated!');
+      });
+  });
+  return promise;
+
+}
+// updateCategoryID('Yoga Mat', 2);
+
+exports.updateCategoryID = updateCategoryID;

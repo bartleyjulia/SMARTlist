@@ -51,10 +51,9 @@ $(function(){
 });
 
 
+  // Function to delete items from database VIA modal using AJAX
 $(document).ready(function() {
   let deleteButton = $('.btn-danger');
-  // Function to delete items from database VIA modal using AJAX
-
     $(deleteButton).on('click', function(evt){
       let itemID = $('#watchModal').children().find('#watchModalTitle').text();
       console.log(itemID);
@@ -62,30 +61,51 @@ $(document).ready(function() {
       console.log("Deletebutton Clicked!");
       var targetPath = '/delete/' + itemID;
       console.log(targetPath);
-      // $
-      // $.post(targetPath, itemID).done(function() {
-        // alert("Alert!");
-      // });
       $.ajax({
         url: targetPath,
         method: 'POST',
         success: function(data) {
-
         console.log('AJAX request returned');
-
           // do stuff with the success data
         },
         error: function(err) {
-
         console.log('AJAX request failed');
         console.log(err);
         }
       });
-      // }).done(function (tweet) {
-      //   console.log('Success :', tweet);
-      // });
     });
 });
+// Function to update items from database VIA modal using AJAX
+
+$(document).ready(function(){
+  const saveButton = $('#watchModal').children().find('#saveButton');
+  $(saveButton).on('click', function(evt){
+  const selectButton = $('#selOtherCategory').val();
+  console.log('selectbuttonoption', selectButton);
+    let itemID = $('#watchModal').children().find('#watchModalTitle').text();
+  const datum = {
+      category_id: selectButton,
+      itemID: itemID
+  };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    // .done(function (tweet) {
+    //   console.log('Success :', tweet);
+  });
+});
+
 
 
 // $(document).ready(function() {
@@ -124,23 +144,3 @@ $(document).ready(function() {
 //       // });
 //     });
 // });
-
-// // Function to update items from database VIA modal using AJAX
-// $(function(){
-//   $('# MODAl save changes button').on('click', function(evt){
-//     evt.preventDefault();
-//     var targetPath = '/edit/' + this.target.parent.firstChild.itemInfo.id.id;
-//     $.ajax({
-//       url: targetPath,
-//       method: 'POST',
-//       success: function(data) {
-//         // do stuff with the success data
-//       },
-//       error: function(data) {
-
-//       }
-
-//     }).done(function (tweet) {
-//       console.log('Success :', tweet);
-//     });
-//   }

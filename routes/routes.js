@@ -3,7 +3,7 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase) => {
+module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, updateCategoryID)=> {
 
   router.get("/", (req, res) => {
     getListItemData()
@@ -49,19 +49,18 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase) 
 
 
 
-
     res.redirect('/');
 
   });
 
   // router.post("/edit/:id", (req, res) => {
   //   // NOT DONE **** CHECK variable names
-  //   new_category = req.body.category;
-  //   item_id = req.params.id;
-  //   {
-  //   updateItemFromDatabase(item_identifier);
-  //   }
-  //    res.redirect('/');
+  //   let itemID = req.params.itemID;
+  //   let newCategoryID = req.params.newCategoryID;
+
+  //   updateCategoryID(itemID, newCategoryID);
+
+  //   res.redirect('/');
 
   // });
   return router;
