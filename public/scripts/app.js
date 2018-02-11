@@ -30,6 +30,7 @@ $(document).ready(function() {
       console.log(err);
       }
     });
+    location.reload();
   });
 
   // READ MODAL DELETE BUTTON 
@@ -49,6 +50,7 @@ $(document).ready(function() {
       console.log(err);
       }
     });
+    location.reload();
   });
 
   // eat MODAL DELETE BUTTON 
@@ -68,6 +70,7 @@ $(document).ready(function() {
       console.log(err);
       }
     });
+    location.reload();
   });
 
   // BUY MODAL DELETE BUTTON 
@@ -87,6 +90,7 @@ $(document).ready(function() {
       console.log(err);
       }
     });
+    location.reload();
   });
 
   // OTHER MODAL DELETE BUTTON 
@@ -106,6 +110,7 @@ $(document).ready(function() {
       console.log(err);
       }
     });
+    location.reload();
   });
 
 });
