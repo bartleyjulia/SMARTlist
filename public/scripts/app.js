@@ -1,79 +1,118 @@
-// WATCH
-$(function(){
-  $('#watchList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      console.log('This is the EVT target stuff:', evt.target.dataset.itemInfo);
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#watchModalTitle').text(data.title);
-    }
-  });
-});
-
-
-// READ
-$(function(){
-  $('#readList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#readModalTitle').text(data.title);
-    }
-  });
-});
-
-// EAT
-$(function(){
-  $('#eatList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#eatModalTitle').text(data.title);
-    }
-  });
-});
-
-// BUY
-$(function(){
-  $('#buyList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#buyModalTitle').text(data.title);
-    }
-  });
-});
-
-// OTHER
-$(function(){
-  $('#otherList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#otherModalTitle').text(data.title);
-    }
-  });
-});
-
-
-  // Function to delete items from database VIA modal using AJAX
 $(document).ready(function() {
-  let deleteButton = $('.btn-danger');
-    $(deleteButton).on('click', function(evt){
-      let itemID = $('#watchModal').children().find('#watchModalTitle').text();
-      console.log(itemID);
-      evt.preventDefault();
-      console.log("Deletebutton Clicked!");
-      var targetPath = '/delete/' + itemID;
-      console.log(targetPath);
-      $.ajax({
-        url: targetPath,
-        method: 'POST',
-        success: function(data) {
-        console.log('AJAX request returned');
-          // do stuff with the success data
-        },
-        error: function(err) {
-        console.log('AJAX request failed');
-        console.log(err);
-        }
-      });
+
+  // POPULATE MODAL HEADER WITH LIST ITEM
+  $('.modalOpen').on('click', function(evt){
+    if(evt.target.dataset.itemInfo){
+      let data = JSON.parse(evt.target.dataset.itemInfo);
+      console.log(data);
+      $('.modal-title').text(data.title);
+    }
+  });
+
+  // WATCH MODAL DELETE BUTTON
+  $('#watchDeleteButton').on('click', function(evt){
+    let itemID = $('#watchModal').children().find('#watchModalTitle').text();
+
+    // MENTOR HELP HERE! Why do I keep getting my title 5 times? Not having to repeat each modal would be 100x better
+    // let itemID = $('.modal-title').text();
+
+    console.log(itemID);
+    console.log("Deletebutton Clicked!");
+    var targetPath = '/delete/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      success: function(data) {
+      console.log('AJAX request returned');
+      },
+      error: function(err) {
+      console.log('AJAX request failed');
+      console.log(err);
+      }
     });
+    location.reload();
+  });
+
+  // READ MODAL DELETE BUTTON
+  $('#readDeleteButton').on('click', function(evt){
+    let itemID = $('#readModal').children().find('#readModalTitle').text();
+    console.log(itemID);
+    console.log("Deletebutton Clicked!");
+    var targetPath = '/delete/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      success: function(data) {
+      console.log('AJAX request returned');
+      },
+      error: function(err) {
+      console.log('AJAX request failed');
+      console.log(err);
+      }
+    });
+    location.reload();
+  });
+
+  // eat MODAL DELETE BUTTON
+  $('#eatDeleteButton').on('click', function(evt){
+    let itemID = $('#eatModal').children().find('#eatModalTitle').text();
+    console.log(itemID);
+    console.log("Deletebutton Clicked!");
+    var targetPath = '/delete/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      success: function(data) {
+      console.log('AJAX request returned');
+      },
+      error: function(err) {
+      console.log('AJAX request failed');
+      console.log(err);
+      }
+    });
+    location.reload();
+  });
+
+  // BUY MODAL DELETE BUTTON
+  $('#buyDeleteButton').on('click', function(evt){
+    let itemID = $('#buyModal').children().find('#buyModalTitle').text();
+    console.log(itemID);
+    console.log("Deletebutton Clicked!");
+    var targetPath = '/delete/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      success: function(data) {
+      console.log('AJAX request returned');
+      },
+      error: function(err) {
+      console.log('AJAX request failed');
+      console.log(err);
+      }
+    });
+    location.reload();
+  });
+
+  // OTHER MODAL DELETE BUTTON
+  $('#otherDeleteButton').on('click', function(evt){
+    let itemID = $('#otherModal').children().find('#otherModalTitle').text();
+    console.log(itemID);
+    console.log("Deletebutton Clicked!");
+    var targetPath = '/delete/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      success: function(data) {
+      console.log('AJAX request returned');
+      },
+      error: function(err) {
+      console.log('AJAX request failed');
+      console.log(err);
+      }
+    });
+    location.reload();
+  });
+
 });
 // Function to update items from database VIA modal using AJAX
 
@@ -112,12 +151,12 @@ $(document).ready(function(){
 
 
 
+
 // $(document).ready(function() {
-//   // let deleteButton = $('#watchModal').children().find('#deleteButton');
+//   let deleteButton = $('.btn-danger');
 //   // Function to delete items from database VIA modal using AJAX
 
 //     $(deleteButton).on('click', function(evt){
-//       console.log("hello");
 //       let itemID = $('#watchModal').children().find('#watchModalTitle').text();
 //       console.log(itemID);
 //       evt.preventDefault();
