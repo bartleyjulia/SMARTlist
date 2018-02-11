@@ -37,7 +37,10 @@
           <section id="watchList" class='collapse modalOpen'>
             <% for(const item of datum[1]) {%>
               <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="check">
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label>  
                   <%= item.list_item %>
               </button>
             <% } %>
@@ -49,12 +52,12 @@
         <button id="toRead" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#readList">TO READ</button>
           <section id='readList' class='collapse modalOpen'>
             <% for(const item of datum[4]) {%>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.id}) %>'>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
                   <label class="check">
-                      <input type="checkbox" >
-                      <span class="checkmark"></span>
-                    </label>
-                    <%= item.list_item %>
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label>
+                  <%= item.list_item %>
               </button>
             <% } %>
           </section>
@@ -63,14 +66,14 @@
     <!-- EAT CATEGORY -->
     <div class="container category">
         <button id="toEat" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#eatList">TO EAT</button>
-          <section id='eatList 'class='collapse modalOpen'>
+          <section id='eatList' class='collapse modalOpen'>
             <% for(const item of datum[2]) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.id}) %>'>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
                   <label class="check">
-                      <input type="checkbox" >
-                      <span class="checkmark"></span>
-                    </label>
-                    <%= item.list_item %>
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label>
+                  <%= item.list_item %>
               </button>
             <% } %>
           </section>
@@ -81,12 +84,12 @@
         <button id="toBuy" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#buyList">TO BUY</button>
           <section id='buyList' class='collapse modalOpen'>
              <% for (const item of datum[3]) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.id}) %>'>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
                   <label class="check">
-                      <input type="checkbox" >
-                      <span class="checkmark"></span>
-                    </label>
-                    <%= item.list_item %>
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label>
+                  <%= item.list_item %>
               </button>
             <% } %>
           </section>
@@ -97,12 +100,12 @@
         <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList">TO OTHER</button>
           <section id='otherList' class='collapse modalOpen'>
             <% for (const item in datum[5]) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.id}) %>'>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
                   <label class="check">
-                      <input type="checkbox" >
-                      <span class="checkmark"></span>
-                    </label>
-                    <%= item.list_item %>
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label>
+                  <%= item.list_item %>
               </button>
             <% } %>
           </section>
@@ -114,7 +117,7 @@
     <!-- MODALS -->
 
     <!-- Modal WATCH -->
-    <div class="modal fade" id="watchModal" tabindex="-1" role="dialog" aria-labelledby="watchModal" aria-hidden="true">
+    <div class="modal fade modalCategory" id="watchModal" tabindex="-1" role="dialog" aria-labelledby="watchModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
 
@@ -187,7 +190,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" id="deleteButton" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
@@ -197,9 +200,10 @@
 
 
     <!-- Modal READ -->
-    <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="readModal" aria-hidden="true">
+    <div class="modal fade modalCategory" id="readModal" tabindex="-1" role="dialog" aria-labelledby="readModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
+          
           <div class="modal-header">
             <h5 class="modal-title">BOOK MODAL</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">

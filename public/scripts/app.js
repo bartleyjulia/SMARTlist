@@ -1,47 +1,92 @@
-// WATCH
-$('.modalOpen').on('click', function(evt){
-  if(evt.target.dataset.itemInfo){
-    var data = JSON.parse(evt.target.dataset.itemInfo);
-    $('.modal-title').text(data.title);
-  }
-});
+
 
 $(document).ready(function() {
-  let deleteButton = $('.btn-danger');
-  // Function to delete items from database VIA modal using AJAX
 
-    $(deleteButton).on('click', function(evt){
-      let itemID = $('#watchModal').children().find('#watchModalTitle').text();
-      console.log(itemID);
-      evt.preventDefault();
-      console.log("Deletebutton Clicked!");
-      var targetPath = '/delete/' + itemID;
-      console.log(targetPath);
-      // $
-      // $.post(targetPath, itemID).done(function() {
-        // alert("Alert!");
-      // });
-      $.ajax({
-        url: targetPath,
-        method: 'POST',
-        success: function(data) {
+  // WATCH
+  $('.modalOpen').on('click', function(evt){
+    if(evt.target.dataset.itemInfo){
+      let data = JSON.parse(evt.target.dataset.itemInfo);
+      console.log(data);
+      $('.modal-title').text(data.title);
+    }
+  });
 
-        console.log('AJAX request returned');
 
-          // do stuff with the success data
-        },
-        error: function(err) {
+  $('.btn-danger').on('click', function(evt){
+    let itemID = $('.modalCategory').children().find('.modal-title').text();
+    evt.preventDefault();
+    var targetPath = '/delete/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      success: function(data) {
 
-        console.log('AJAX request failed');
-        console.log(err);
-        }
-      });
-      // }).done(function (tweet) {
-      //   console.log('Success :', tweet);
-      // });
+      console.log('AJAX request returned');
+
+        // do stuff with the success data
+      },
+      error: function(err) {
+
+      console.log('AJAX request failed');
+      console.log(err);
+      }
     });
+  });
+
+// END OF Document Ready
 });
 
+
+
+
+
+//   $(deleteButton).on('click', function(evt){
+//     // let itemID = $('.modalCategory').children().find('.modal-title').text();
+//     console.log('This is itemID: ' + itemID);
+//     evt.preventDefault();
+//     var targetPath = '/delete/' + itemID;
+//     // $
+//     // $.post(targetPath, itemID).done(function() {
+//       // alert("Alert!");
+//     // });
+//     $.ajax({
+//       url: targetPath,
+//       method: 'POST',
+//       success: function(data) {
+
+//       console.log('AJAX request returned');
+
+//         // do stuff with the success data
+//       },
+//       error: function(err) {
+
+//       console.log('AJAX request failed');
+//       console.log(err);
+//       }
+//     });
+//     // }).done(function (tweet) {
+//     //   console.log('Success :', tweet); 
+//     // });
+//   });
+// });
+
+
+  // ONE FUNCTION TO DELETE USING ID - ASK MENTOR
+
+  // $('.btn-danger').on('click', function(evt){
+  //   let item = $(this).parent().parent().parent().parent().parent();
+
+  //   let test = item.find($('.data-item-info'));
+
+  //   console.log(item);
+  //   console.log(test);
+
+  //   // if(evt.target.dataset.itemInfo){
+  //   //   let data = JSON.parse(evt.target.dataset.itemInfo);
+  //   //   console.log(data);
+  //   //   $('.modal-title').text(data.id);
+  //   // }
+  // });
 
 
 // $(document).ready(function() {
