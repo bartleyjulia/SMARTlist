@@ -63,10 +63,10 @@ function wordConverter(input) {
   }
   if (input === 'Buy') {
     numValue = 3;
-  } else {
+  } if (input === 'Eat') {
     numValue = 2;
   }
-  return +numValue
+  return numValue;
 }
 // updateCategoryID('Yoga Mat', 2);
 exports.wordConverter = wordConverter

@@ -115,10 +115,11 @@ $(document).ready(function() {
 
 });
 // Function to update items from database VIA modal using AJAX
-
+// WATCH MODAL CHANGE CATEGORY
 $(document).ready(function(){
-  const saveButton = $('#watchModal').children().find('#saveButton');
+  const saveButton = $('#watchModal').children().find('.btn-primary');
   $(saveButton).on('click', function(evt){
+    // console.log(saveButton);
     const selectButton = $('#selOtherCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#watchModal').children().find('#watchModalTitle').text();
@@ -126,7 +127,6 @@ $(document).ready(function(){
       category_id: selectButton,
       itemID: itemID
     };
-    const datumString = JSON.stringify(datum);
     evt.preventDefault();
     var targetPath = '/edit/' + itemID;
     $.ajax({
@@ -146,8 +146,118 @@ $(document).ready(function(){
     });
     // .done(function (tweet) {
     //   console.log('Success :', tweet);
+  location.reload();
   });
 });
+
+// READ MODAL CHANGE CATEGORY
+$(document).ready(function(){
+  const saveButton = $('#readModal').children().find('.btn-primary');
+  $(saveButton).on('click', function(evt){
+    // console.log(saveButton);
+    const selectButton = $('#selReadCategory').val();
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#readModal').children().find('#readModalTitle').text();
+    const datum = {
+      category_id: selectButton,
+      itemID: itemID
+    };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      data: {
+        datum: datum
+      },
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    // .done(function (tweet) {
+    //   console.log('Success :', tweet);
+  location.reload();
+  });
+});
+
+// EAT MODAL CHANGE CATEGORY
+$(document).ready(function(){
+  const saveButton = $('#eatModal').children().find('.btn-primary');
+  $(saveButton).on('click', function(evt){
+    console.log('Savebutton', saveButton);
+    const selectButton = $('#selEatCategory').val();
+    console.log('Select button', selectButton);
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#eatModal').children().find('#eatModalTitle').text();
+    console.log('Item ID', itemID);
+    const datum = {
+      category_id: selectButton,
+      itemID: itemID
+    };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      data: {
+        datum: datum
+      },
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    // .done(function (tweet) {
+    //   console.log('Success :', tweet);
+  location.reload();
+  });
+});
+
+// BUY MODAL CHANGE CATEGORY
+$(document).ready(function(){
+  const saveButton = $('#buyModal').children().find('.btn-primary');
+  $(saveButton).on('click', function(evt){
+    // console.log(saveButton);
+    const selectButton = $('#selBuyCategory').val();
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#buyModal').children().find('#buyModalTitle').text();
+    const datum = {
+      category_id: selectButton,
+      itemID: itemID
+    };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      data: {
+        datum: datum
+      },
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    // .done(function (tweet) {
+    //   console.log('Success :', tweet);
+  location.reload();
+  });
+});
+
+
 
 
 
