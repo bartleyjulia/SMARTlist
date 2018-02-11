@@ -27,6 +27,7 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase) 
       return;
     }
     saveInputToDatabase(item);
+    res.redirect('/')
   });
 
 // Deletes list item from DB
@@ -36,7 +37,7 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase) 
     console.log("This is req in routes after post", req.params.itemID);
     let input = req.params.itemID;
     deleteItemFromDatabase(input);
-
+    res.redirect('/')
   });
 
   // router.post("/edit/:id", (req, res) => {
