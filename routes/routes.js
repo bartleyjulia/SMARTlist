@@ -3,7 +3,7 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (getListItemData, saveInputToDatabase) => {
+module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase) => {
 
   router.get("/", (req, res) => {
     getListItemData()
@@ -34,5 +34,35 @@ module.exports = (getListItemData, saveInputToDatabase) => {
 
   });
 
+
+
+
+
+
+
+  router.post("/delete/:itemID", (req, res) => {
+    // NOT DONE **** CHECK variable names/ PROCESS
+    console.log("AJAX request Received");
+    console.log("This is req in routes after post", req.params.itemID);
+    let input = req.params.itemID;
+    deleteItemFromDatabase(input);
+
+
+
+
+    res.redirect('/');
+
+  });
+
+  // router.post("/edit/:id", (req, res) => {
+  //   // NOT DONE **** CHECK variable names
+  //   new_category = req.body.category;
+  //   item_id = req.params.id;
+  //   {
+  //   updateItemFromDatabase(item_identifier);
+  //   }
+  //    res.redirect('/');
+
+  // });
   return router;
 };
