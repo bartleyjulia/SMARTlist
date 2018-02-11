@@ -1,55 +1,10 @@
 // WATCH
-$(function(){
-  $('#watchList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      console.log('This is the EVT target stuff:', evt.target.dataset.itemInfo);
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#watchModalTitle').text(data.title);
-    }
-  });
+$('.modalOpen').on('click', function(evt){
+  if(evt.target.dataset.itemInfo){
+    var data = JSON.parse(evt.target.dataset.itemInfo);
+    $('.modal-title').text(data.title);
+  }
 });
-
-
-// READ
-$(function(){
-  $('#readList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#readModalTitle').text(data.title);
-    }
-  });
-});
-
-// EAT
-$(function(){
-  $('#eatList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#eatModalTitle').text(data.title);
-    }
-  });
-});
-
-// BUY
-$(function(){
-  $('#buyList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#buyModalTitle').text(data.title);
-    }
-  });
-});
-
-// OTHER
-$(function(){
-  $('#otherList').on('click', function(evt){
-    if(evt.target.dataset.itemInfo){
-      var data = JSON.parse(evt.target.dataset.itemInfo);
-      $('#otherModalTitle').text(data.title);
-    }
-  });
-});
-
 
 $(document).ready(function() {
   let deleteButton = $('.btn-danger');
@@ -86,6 +41,7 @@ $(document).ready(function() {
       // });
     });
 });
+
 
 
 // $(document).ready(function() {

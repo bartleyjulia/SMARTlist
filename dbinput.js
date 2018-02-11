@@ -25,7 +25,7 @@ classifier.learn('book, read, novel, chapter, reading, magazine', '4');
 classifier.learn('book, author, by, paper, album, booklet, textbook, print, fiction, edition', '4');
 
 // LEARN EAT
-classifier.learn('eat, try, go to, food, pizza, burger, kitchen, taste, restaurants, bar, cafeteria, coffee', '2')
+classifier.learn('eat, try, lunch, dinner, breakfast, brunch, go to, food, pizza, burger, kitchen, taste, restaurants, bar, cafeteria, coffee', '2')
 classifier.learn('eat, diner, grill, eatery, pizzeria, cafe, eating, fast-food, lunch, tavern', '2')
 classifier.learn('eat, cook, cooking, bake, fry, fries, cusine, bread, meal, meat, snack, bite, eats, menu', '2')
 classifier.learn('cactus, salad, chinese, butcher, knife, fork, deep-fried, deep fried, oven, hungry', '2')
