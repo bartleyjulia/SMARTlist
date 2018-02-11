@@ -113,12 +113,10 @@ $(document).ready(function() {
     location.reload();
   });
 
-});
 // Function to update items from database VIA modal using AJAX
 // WATCH MODAL CHANGE CATEGORY
-$(document).ready(function(){
-  const saveButton = $('#watchModal').children().find('.btn-primary');
-  $(saveButton).on('click', function(evt){
+  const saveWatchButton = $('#watchModal').children().find('.btn-primary');
+  $(saveWatchButton).on('click', function(evt){
     // console.log(saveButton);
     const selectButton = $('#selOtherCategory').val();
     console.log('selectbuttonoption', selectButton);
@@ -144,16 +142,12 @@ $(document).ready(function(){
         console.log(err);
       }
     });
-    // .done(function (tweet) {
-    //   console.log('Success :', tweet);
-  location.reload();
+    location.reload();
   });
-});
 
 // READ MODAL CHANGE CATEGORY
-$(document).ready(function(){
-  const saveButton = $('#readModal').children().find('.btn-primary');
-  $(saveButton).on('click', function(evt){
+  const saveReadButton = $('#readModal').children().find('.btn-primary');
+  $(saveReadButton).on('click', function(evt){
     // console.log(saveButton);
     const selectButton = $('#selReadCategory').val();
     console.log('selectbuttonoption', selectButton);
@@ -181,15 +175,13 @@ $(document).ready(function(){
     });
     // .done(function (tweet) {
     //   console.log('Success :', tweet);
-  location.reload();
+    location.reload();
   });
-});
 
 // EAT MODAL CHANGE CATEGORY
-$(document).ready(function(){
-  const saveButton = $('#eatModal').children().find('.btn-primary');
-  $(saveButton).on('click', function(evt){
-    console.log('Savebutton', saveButton);
+  const saveEatButton = $('#eatModal').children().find('.btn-primary');
+  $(saveEatButton).on('click', function(evt){
+    // console.log('Savebutton', saveButton);
     const selectButton = $('#selEatCategory').val();
     console.log('Select button', selectButton);
     console.log('selectbuttonoption', selectButton);
@@ -220,12 +212,10 @@ $(document).ready(function(){
     //   console.log('Success :', tweet);
   location.reload();
   });
-});
 
 // BUY MODAL CHANGE CATEGORY
-$(document).ready(function(){
-  const saveButton = $('#buyModal').children().find('.btn-primary');
-  $(saveButton).on('click', function(evt){
+  const saveBuyButton = $('#buyModal').children().find('.btn-primary');
+  $(saveBuyButton).on('click', function(evt){
     // console.log(saveButton);
     const selectButton = $('#selBuyCategory').val();
     console.log('selectbuttonoption', selectButton);
@@ -255,9 +245,9 @@ $(document).ready(function(){
     //   console.log('Success :', tweet);
   location.reload();
   });
+
+
 });
-
-
 
 
 
