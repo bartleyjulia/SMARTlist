@@ -51,6 +51,24 @@ function updateCategoryID(itemID, newCategoryID) {
   return promise;
 
 }
+
+
+function wordConverter(input) {
+  let numValue = 0;
+  if (input === 'Watch') {
+    numValue = 1;
+  }
+  if (input === 'Read') {
+    numValue = 4;
+  }
+  if (input === 'Buy') {
+    numValue = 3;
+  } else {
+    numValue = 2;
+  }
+  return +numValue
+}
 // updateCategoryID('Yoga Mat', 2);
+exports.wordConverter = wordConverter
 
 exports.updateCategoryID = updateCategoryID;

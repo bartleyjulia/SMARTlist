@@ -19,7 +19,7 @@ const dbinput = require("./dbinput.js");
 const dbconnection = require("./dbconnection.js");
 const dbupdate = require("./dbupdate.js");
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/routes")(dbconnection.getListItemData, dbinput.saveInputToDatabase, dbupdate.deleteItemFromDatabase);
+const usersRoutes = require("./routes/routes")(dbconnection.getListItemData, dbinput.saveInputToDatabase, dbupdate.deleteItemFromDatabase, dbupdate.updateCategoryID, dbupdate.wordConverter);
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.

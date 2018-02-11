@@ -80,18 +80,22 @@ $(document).ready(function() {
 $(document).ready(function(){
   const saveButton = $('#watchModal').children().find('#saveButton');
   $(saveButton).on('click', function(evt){
-  const selectButton = $('#selOtherCategory').val();
-  console.log('selectbuttonoption', selectButton);
-    let itemID = $('#watchModal').children().find('#watchModalTitle').text();
-  const datum = {
+    const selectButton = $('#selOtherCategory').val();
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#watchModal').children().find('#watchModalTitle').text();
+    const datum = {
       category_id: selectButton,
       itemID: itemID
-  };
+    };
+    const datumString = JSON.stringify(datum);
     evt.preventDefault();
     var targetPath = '/edit/' + itemID;
     $.ajax({
       url: targetPath,
       method: 'POST',
+      data: {
+        datum: datum
+      },
       success: function(data) {
         console.log('AJAX request returned');
         // do stuff with the success data
