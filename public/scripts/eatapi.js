@@ -8,34 +8,45 @@ const client = yelp.client('JEnpW-r-Sg1t8IUBJbawAPp8Kxs5na6yaq1btX68qO1yLQ00Ydy5
 
 let bbq = 'China Town BBQ';
 
+function findPhoneNumber(name) {
+  let phone = client.search({
+    term: name,
+    location: 'vancouver, bc'
+  })
+  .then((uglyData) => {
+    var decodedJSON = JSON.parse(uglyData.body);
+    return decodedJSON.businesses[0].phone;
+    // return // some crazy promise of just the phone number
+  });
+  // console.log("phone:", phone)
+  return phone;
+}
+
+// findPhoneNumber('Revolver')
+// .then((result) => {
+//   // var decodedJSON = JSON.parse(result.body);
+//   // // console.log(decodedJSON);
+//   // console.log(decodedJSON.businesses[0].phone);
+//   console.log("result:", result)
+// })
+// .catch((err) => {
+//   console.log("no.  no.  no god no.  please god no.  noooooooooooo!!!!!!")
+// })
+
+
 // function findPhoneNumber(name) {
-//   const promise = new Promise( function(resolve, reject) {
+//   // const promise = new Promise( function(resolve, reject) {
 //     let phone = client.search({
-//       term: ('cactus club'),
+//       term: 'cactus club',
 //       location: 'vancouver, bc'
 //     }).then(function(result) {
 //       if (result) {
 //         console.log(result.jsonBody.businesses[0].phone);
 //         console.log('Phone Number')
-//       } 
+//       }
 //     });
-//   });
-//   // return promise;
+//   // });
 // }
-
-function findPhoneNumber(name) {
-  // const promise = new Promise( function(resolve, reject) {
-    let phone = client.search({
-      term: 'cactus club',
-      location: 'vancouver, bc'
-    }).then(function(result) {
-      if (result) {
-        console.log(result.jsonBody.businesses[0].phone);
-        console.log('Phone Number')
-      } 
-    });
-  // });
-}
 
 
 // function findPhoneNumber(name) {

@@ -11,13 +11,12 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, 
     getListItemData()
     .then(function(datum){
       console.log('Successful GET request');
-      res.render('index.ejs', { datum: datum } );
       // console.log(datum);
-    findPhoneNumber()
-    .then(function(data) {
-      // console.log('Successful Phone request: ', data);
-      res.render('index.ejs', { data: data });
-    })
+      findPhoneNumber('Revolver')
+      .then(function(phoneNumber) {
+        // console.log('Successful Phone request: ', phoneNumber);
+        res.render('index.ejs', { phoneNumber: phoneNumber, datum: datum});
+      })
     })
     .catch(function (err){
         throw err;
