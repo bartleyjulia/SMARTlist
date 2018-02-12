@@ -22,7 +22,6 @@ exports.seed = function(knex, Promise) {
 
     .then(function () {
       return Promise.all([
-        knex('user_lists').insert({ list_item: 'Shrek', user_id: '1', category_id: '1', completed: false }),
         knex('user_lists').insert({ list_item: 'Casablanca', user_id: '1', category_id: '1', completed: false }),
         knex('user_lists').insert({ list_item: 'Vertigo', user_id: '1', category_id: '1', completed: false }),
         knex('user_lists').insert({ list_item: 'Cafe Medina', user_id: '1', category_id: '2', completed: false }),

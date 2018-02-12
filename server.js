@@ -14,7 +14,7 @@ const knex        = require("knex")(knexConfig[ENV]);
 const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 
-
+// FILES THAT CONTAIN FUNCTIONS TO CONVERT AND RETRIEVE DATA
 const dbinput = require("./dbinput.js");
 const dbconnection = require("./dbconnection.js");
 const dbupdate = require("./dbupdate.js");
@@ -22,7 +22,6 @@ const dbupdate = require("./dbupdate.js");
 // API
 const yelp = require('./public/scripts/eatapi');
 
-// Seperated Routes for each Resource
 const usersRoutes = require("./routes/routes")(dbconnection.getListItemData, dbinput.saveInputToDatabase, dbupdate.deleteItemFromDatabase, dbupdate.updateCategoryID, dbupdate.wordConverter, yelp.findPhoneNumber, dbupdate.valueConverter);
 
 app.use(morgan('dev'));
@@ -39,6 +38,7 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
+// SPECIFIES MAIN ROUTE AND PASSES COLLECTED FUNCTIONS TO THE FILE
 app.use("/", usersRoutes);
 
 app.listen(PORT, () => {
