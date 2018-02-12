@@ -31,14 +31,14 @@ function deleteItemFromDatabase(item_identifier) {
 
 exports.deleteItemFromDatabase = deleteItemFromDatabase;
 
-function updateCategoryID(itemID, newCategoryID) {
+function updateCategoryID(itemID, newCategoryID, completeness) {
   console.log(itemID);
   console.log(newCategoryID);
 
   const promise = new Promise( function(resolve, reject) {
     knex("user_lists")
       .where('list_item', itemID)
-      .update({'category_id': newCategoryID})
+      .update({'category_id': newCategoryID, 'completed': completeness})
       .asCallback(function(err, result ){
         if (err) {
           console.log(err);
@@ -49,6 +49,7 @@ function updateCategoryID(itemID, newCategoryID) {
       });
   });
   return promise;
+  console.log
 
 }
 
@@ -70,7 +71,17 @@ function wordConverter(input) {
   }
   return numValue;
 }
-// updateCategoryID('Yoga Mat', 2);
-exports.wordConverter = wordConverter
+
+function valueConverter(input) {
+  let result = false;
+  if (input === 'Yes') {
+    result = true;
+  }
+
+  return result;
+}
+
+exports.wordConverter = wordConverter;
+exports.valueConverter = valueConverter;
 
 exports.updateCategoryID = updateCategoryID;

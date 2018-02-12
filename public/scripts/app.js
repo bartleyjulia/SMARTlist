@@ -1,5 +1,6 @@
+
 $(document).ready(function() {
-  
+
   // ENTER KEY SUBMITS ADD ITEM
   $('#comment').keypress(function (e) {
     if(e.keyCode == 13){
@@ -125,12 +126,14 @@ $(document).ready(function() {
   const saveWatchButton = $('#watchModal').children().find('.btn-primary');
   $(saveWatchButton).on('click', function(evt){
     // console.log(saveButton);
+    const completeButton = $('#selWatchDone').val();
     const selectButton = $('#selWatchCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#watchModal').children().find('#watchModalTitle').text();
     const datum = {
       category_id: selectButton,
-      itemID: itemID
+      itemID: itemID,
+      completed: completeButton
     };
     evt.preventDefault();
     var targetPath = '/edit/' + itemID;
@@ -156,12 +159,14 @@ $(document).ready(function() {
   const saveReadButton = $('#readModal').children().find('.btn-primary');
   $(saveReadButton).on('click', function(evt){
     // console.log(saveButton);
+    const completeButton = $('#selReadDone').val();
     const selectButton = $('#selReadCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#readModal').children().find('#readModalTitle').text();
     const datum = {
       category_id: selectButton,
-      itemID: itemID
+      itemID: itemID,
+      completed: completeButton
     };
     evt.preventDefault();
     var targetPath = '/edit/' + itemID;
@@ -189,6 +194,7 @@ $(document).ready(function() {
   const saveEatButton = $('#eatModal').children().find('.btn-primary');
   $(saveEatButton).on('click', function(evt){
     // console.log('Savebutton', saveButton);
+    const completeButton = $('#selEatDone').val();
     const selectButton = $('#selEatCategory').val();
     console.log('Select button', selectButton);
     console.log('selectbuttonoption', selectButton);
@@ -196,7 +202,8 @@ $(document).ready(function() {
     console.log('Item ID', itemID);
     const datum = {
       category_id: selectButton,
-      itemID: itemID
+      itemID: itemID,
+      completed: completeButton
     };
     evt.preventDefault();
     var targetPath = '/edit/' + itemID;
@@ -224,12 +231,14 @@ $(document).ready(function() {
   const saveBuyButton = $('#buyModal').children().find('.btn-primary');
   $(saveBuyButton).on('click', function(evt){
     // console.log(saveButton);
+    const completeButton = $('#selBuyDone').val();
     const selectButton = $('#selBuyCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#buyModal').children().find('#buyModalTitle').text();
     const datum = {
       category_id: selectButton,
-      itemID: itemID
+      itemID: itemID,
+      completed: completeButton
     };
     evt.preventDefault();
     var targetPath = '/edit/' + itemID;
@@ -254,17 +263,19 @@ $(document).ready(function() {
   });
 
 
-});
 
   const saveOtherButton = $('#otherModal').children().find('.btn-primary');
   $(saveOtherButton).on('click', function(evt){
     // console.log(saveButton);
+    const completeButton = $('#selOtherDone').val();
+    console.log(completeButton);
     const selectButton = $('#selOtherCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#otherModal').children().find('#otherModalTitle').text();
     const datum = {
       category_id: selectButton,
-      itemID: itemID
+      itemID: itemID,
+      completed: completeButton
     };
     evt.preventDefault();
     var targetPath = '/edit/' + itemID;
@@ -287,3 +298,6 @@ $(document).ready(function() {
     //   console.log('Success :', tweet);
     location.reload();
   });
+
+});
+
