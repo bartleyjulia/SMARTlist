@@ -6,31 +6,31 @@ compleet.ai is a cutting edge todo list application that utilizes natural langua
 
 Homepage of compleet.ai:
 
-!["Screenshot of homepage"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-compose.png?raw=true)
+!["Screenshot of homepage"](https://github.com/bartleyjulia/SMARTlist/blob/demo/docs/screenshot_homepage.png?raw=true)
 
 Adding new list item to specific category:
 
-!["Screenshot of adding new list item"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+!["Screenshot of adding new list item"](https://github.com/bartleyjulia/SMARTlist/blob/demo/docs/screenshot_homepage_add.png?raw=true)
 
 List item being added to list based on category recognition:
 
-!["Screenshot of new list item being categorized"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+!["Screenshot of new list item being categorized"](https://github.com/bartleyjulia/SMARTlist/blob/demo/docs/screenshot_homepage_add_item.png?raw=true)
 
 List item details opened in modal:
 
-!["Screenshot of list item details opening in modal"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+!["Screenshot of list item details opening in modal"](https://github.com/bartleyjulia/SMARTlist/blob/demo/docs/screenshot_modal.png?raw=true)
 
 List item can be recategorized via drop down selector:
 
-!["Screenshot of list item re-categorization"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+!["Screenshot of list item re-categorization"](https://github.com/bartleyjulia/SMARTlist/blob/demo/docs/screenshot_modal_cat.png?raw=true)
 
 List item completion status change from not completed to completed:
 
-!["Screenshot of list item status change"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+!["Screenshot of list item status change"](https://github.com/bartleyjulia/SMARTlist/blob/demo/docs/screenshot_modal_done.png?raw=true)
 
 List item changes can be saved to database, or deleted:
 
-!["Screenshot list item data changes"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+!["Screenshot list item data changes"](https://github.com/bartleyjulia/SMARTlist/blob/demo/docs/screenshot_modal_save.png?raw=true)
 
 Todo list items are composed by the user, and stored in a a SQL database (Postgres), where they are attached to categorizes and sorted based on completion.
 
@@ -47,4 +47,16 @@ Todo list items are composed by the user, and stored in a a SQL database (Postgr
 
 - Node 5.10.x or above
 - NPM 3.8.x or above
-- 
+- Bayes 0.07
+- Bootstrap 4.0.0
+- Dotenv 2.0.0
+- EJS 2.4.1
+- Express 4.13.4
+- Flexbox 0.0.3
+- Knex 0.11.7
+- Knex-logger 0.1.0
+- Morgan 1.7.0
+- Node-sass-middleware 0.9.8
+- PG 6.0.2
+- Yelp-fusion 2.0.3
+- Nodemon 1.14.12
