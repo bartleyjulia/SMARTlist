@@ -16,7 +16,8 @@ $(document).ready(function() {
       $('.modal-title').text(data.title);
     }
   });
-// adding a line to
+
+
   // WATCH MODAL DELETE BUTTON
   $('#watchDeleteButton').on('click', function(evt){
     let itemID = $('#watchModal').children().find('#watchModalTitle').text();
@@ -125,8 +126,11 @@ $(document).ready(function() {
 // WATCH MODAL CHANGE CATEGORY
   const saveWatchButton = $('#watchModal').children().find('.btn-primary');
   $(saveWatchButton).on('click', function(evt){
+<<<<<<< HEAD
     // console.log(saveButton);
     const completeButton = $('#selWatchDone').val();
+=======
+>>>>>>> feature/yelpapi
     const selectButton = $('#selWatchCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#watchModal').children().find('#watchModalTitle').text();
@@ -145,7 +149,6 @@ $(document).ready(function() {
       },
       success: function(data) {
         console.log('AJAX request returned');
-        // do stuff with the success data
       },
       error: function(err) {
         console.log('AJAX request failed');
@@ -158,8 +161,11 @@ $(document).ready(function() {
 // READ MODAL CHANGE CATEGORY
   const saveReadButton = $('#readModal').children().find('.btn-primary');
   $(saveReadButton).on('click', function(evt){
+<<<<<<< HEAD
     // console.log(saveButton);
     const completeButton = $('#selReadDone').val();
+=======
+>>>>>>> feature/yelpapi
     const selectButton = $('#selReadCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#readModal').children().find('#readModalTitle').text();
@@ -178,15 +184,12 @@ $(document).ready(function() {
       },
       success: function(data) {
         console.log('AJAX request returned');
-        // do stuff with the success data
       },
       error: function(err) {
         console.log('AJAX request failed');
         console.log(err);
       }
     });
-    // .done(function (tweet) {
-    //   console.log('Success :', tweet);
     location.reload();
   });
 
@@ -215,23 +218,23 @@ $(document).ready(function() {
       },
       success: function(data) {
         console.log('AJAX request returned');
-        // do stuff with the success data
       },
       error: function(err) {
         console.log('AJAX request failed');
         console.log(err);
       }
     });
-    // .done(function (tweet) {
-    //   console.log('Success :', tweet);
   location.reload();
   });
 
 // BUY MODAL CHANGE CATEGORY
   const saveBuyButton = $('#buyModal').children().find('.btn-primary');
   $(saveBuyButton).on('click', function(evt){
+<<<<<<< HEAD
     // console.log(saveButton);
     const completeButton = $('#selBuyDone').val();
+=======
+>>>>>>> feature/yelpapi
     const selectButton = $('#selBuyCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#buyModal').children().find('#buyModalTitle').text();
@@ -250,25 +253,27 @@ $(document).ready(function() {
       },
       success: function(data) {
         console.log('AJAX request returned');
-        // do stuff with the success data
       },
       error: function(err) {
         console.log('AJAX request failed');
         console.log(err);
       }
     });
-    // .done(function (tweet) {
-    //   console.log('Success :', tweet);
   location.reload();
   });
 
 
+<<<<<<< HEAD
 
   const saveOtherButton = $('#otherModal').children().find('.btn-primary');
   $(saveOtherButton).on('click', function(evt){
     // console.log(saveButton);
     const completeButton = $('#selOtherDone').val();
     console.log(completeButton);
+=======
+  const saveOtherButton = $('#otherModal').children().find('.btn-primary');
+  $(saveOtherButton).on('click', function(evt){
+>>>>>>> feature/yelpapi
     const selectButton = $('#selOtherCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#otherModal').children().find('#otherModalTitle').text();
@@ -287,17 +292,18 @@ $(document).ready(function() {
       },
       success: function(data) {
         console.log('AJAX request returned');
-        // do stuff with the success data
       },
       error: function(err) {
         console.log('AJAX request failed');
         console.log(err);
       }
     });
-    // .done(function (tweet) {
-    //   console.log('Success :', tweet);
     location.reload();
   });
 
+<<<<<<< HEAD
 });
 
+=======
+});
+>>>>>>> feature/yelpapi
