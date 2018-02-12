@@ -18,8 +18,12 @@ const knexLogger  = require('knex-logger');
 const dbinput = require("./dbinput.js");
 const dbconnection = require("./dbconnection.js");
 const dbupdate = require("./dbupdate.js");
+
+//API
+const yelp = require('./public/scripts/eatapi');
+
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/routes")(dbconnection.getListItemData, dbinput.saveInputToDatabase, dbupdate.deleteItemFromDatabase);
+const usersRoutes = require("./routes/routes")(dbconnection.getListItemData, dbinput.saveInputToDatabase, dbupdate.deleteItemFromDatabase, yelp.findPhoneNumber);
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
