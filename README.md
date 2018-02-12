@@ -1,29 +1,50 @@
-# Node Skeleton
+# compleet.ai
 
-## Project Setup
+compleet.ai is a cutting edge todo list application that utilizes natural language processing and artificial intelligence to automatically sort data into specific categories. Users can add new items, re-categorize, check off, and delete items.
 
-1. Create your own empty repo on GitHub
-2. Clone this repository (do not fork)
-  - Suggestion: When cloning, specify a different folder name that is relevant to your project
-3. Remove the git remote: `git remote rm origin`
-4. Add a remote for your origin: `git remote add origin <your github repo URL>`
-5. Push to the new origin: `git push -u origin master`
-6. Verify that the skeleton code now shows up in your repo on GitHub
+## Images
+
+Homepage of compleet.ai:
+
+!["Screenshot of homepage"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-compose.png?raw=true)
+
+Adding new list item to specific category:
+
+!["Screenshot of adding new list item"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+
+List item being added to list based on category recognition:
+
+!["Screenshot of new list item being categorized"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+
+List item details opened in modal:
+
+!["Screenshot of list item details opening in modal"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+
+List item can be recategorized via drop down selector:
+
+!["Screenshot of list item re-categorization"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+
+List item completion status change from not completed to completed:
+
+!["Screenshot of list item status change"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+
+List item changes can be saved to database, or deleted:
+
+!["Screenshot list item data changes"](https://github.com/al8876/tweeter/blob/master/docs/tweeter-feed.png?raw=true)
+
+Todo list items are composed by the user, and stored in a a SQL database (Postgres), where they are attached to categorizes and sorted based on completion.
 
 ## Getting Started
 
-1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information
-3. Install dependencies: `npm i`
-4. Fix to binaries for sass: `npm rebuild node-sass`
-5. Run migrations: `npm run knex migrate:latest`
-  - Check the migrations folder to see what gets created in the DB
-6. Run the seed: `npm run knex seed:run`
-  - Check the seeds file to see what gets seeded in the DB
-7. Run the server: `npm run local`
-8. Visit `http://localhost:8080/`
+- Clone compleet.ai respository
+- Install all dependencies (using the "npm install" command).
+- Run command "knex migrate:latest" to populate SQL database tables.
+- Run command "knex seed:run" to populate SQL dataset into the database tables created in the last step.
+- Using node.js, run "npm run local" in the compleet.ai directory.
+- On your browser, use the URL "http://localhost:8080" to access compleet.ai
 
 ## Dependencies
 
 - Node 5.10.x or above
 - NPM 3.8.x or above
+- 

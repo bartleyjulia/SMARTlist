@@ -13,8 +13,8 @@ function findPhoneNumber(name) {
     term: name,
     location: 'vancouver, bc'
   })
-  .then((uglyData) => {
-    var decodedJSON = JSON.parse(uglyData.body);
+  .then((dataset) => {
+    var decodedJSON = JSON.parse(dataset.body);
     return decodedJSON.businesses[0].phone;
     // return // some crazy promise of just the phone number
   });
