@@ -8,7 +8,7 @@ $(document).ready(function() {
       $('.modal-title').text(data.title);
     }
   });
-// adding a line to test
+// adding a line to
   // WATCH MODAL DELETE BUTTON
   $('#watchDeleteButton').on('click', function(evt){
     let itemID = $('#watchModal').children().find('#watchModalTitle').text();
@@ -118,7 +118,7 @@ $(document).ready(function() {
   const saveWatchButton = $('#watchModal').children().find('.btn-primary');
   $(saveWatchButton).on('click', function(evt){
     // console.log(saveButton);
-    const selectButton = $('#selOtherCategory').val();
+    const selectButton = $('#selWatchCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#watchModal').children().find('#watchModalTitle').text();
     const datum = {
@@ -248,6 +248,39 @@ $(document).ready(function() {
 
 
 });
+
+  const saveOtherButton = $('#otherModal').children().find('.btn-primary');
+  $(saveOtherButton).on('click', function(evt){
+    // console.log(saveButton);
+    const selectButton = $('#selOtherCategory').val();
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#otherModal').children().find('#otherModalTitle').text();
+    const datum = {
+      category_id: selectButton,
+      itemID: itemID
+    };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      data: {
+        datum: datum
+      },
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    // .done(function (tweet) {
+    //   console.log('Success :', tweet);
+    location.reload();
+  });
+
 
 
 

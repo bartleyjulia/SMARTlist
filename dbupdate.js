@@ -65,6 +65,8 @@ function wordConverter(input) {
     numValue = 3;
   } if (input === 'Eat') {
     numValue = 2;
+  } if (input === 'Other') {
+    numValue = 5;
   }
   return numValue;
 }

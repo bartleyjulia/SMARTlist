@@ -10,6 +10,7 @@
 
     <!-- compleet Style Sheet CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
 
   <body>
@@ -33,7 +34,7 @@
 
     <!-- WATCH CATEGORY -->
     <div class="container category">
-        <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList">TO WATCH</button>
+        <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList"><i class="fas fa-camera-retro"></i>TO WATCH</button>
           <section id='watchList' class='collapse modalOpen'>
             <% for(const item of datum[1]) {%>
               <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
@@ -96,7 +97,7 @@
     <div class="container category">
         <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList">TO OTHER</button>
           <section id='otherList' class='collapse modalOpen'>
-            <% for (const item in datum[5]) { %>
+            <% for (const item of datum[5]) { %>
               <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
                   <label class="check">
                       <input type="checkbox" >
@@ -130,7 +131,7 @@
             <!-- Category Selector -->
             <div class="form-group">
                 <label for="selWatchCategory">Category:</label>
-                <select class="form-control" id="selOtherCategory">
+                <select class="form-control" id="selWatchCategory">
                   <option>Watch</option>
                   <option>Read</option>
                   <option>Eat</option>
@@ -484,6 +485,7 @@
 
     <!-- JS APP -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
 
   </body>
 </html>

@@ -9,7 +9,10 @@ exports.seed = function(knex, Promise) {
           .then( function () {
           return knex('categories').insert({ category: 'read' })
           .then( function () {
+          return knex('categories').insert({ category: 'other' })
+          .then( function () {
           return knex('users').insert({ name: 'Alice', email: 'alice@alice.com', password: 'alice'})
+          })
           })
           })
           })
@@ -30,7 +33,8 @@ exports.seed = function(knex, Promise) {
         knex('user_lists').insert({ list_item: 'Yoga Mat', user_id: '1', category_id: '3', completed: false }),
         knex('user_lists').insert({ list_item: 'Atlas Shrugged', user_id: '1', category_id: '4', completed: false }),
         knex('user_lists').insert({ list_item: 'The Fountainhead', user_id: '1', category_id: '4', completed: false }),
-        knex('user_lists').insert({ list_item: 'The Communist Manifesto', user_id: '1', category_id: '4', completed: true })
+        knex('user_lists').insert({ list_item: 'The Communist Manifesto', user_id: '1', category_id: '4', completed: true }),
+        knex('user_lists').insert({ list_item: 'Wash car', user_id: '1', category_id: '5', completed: false })
     ]);
     });
     };
