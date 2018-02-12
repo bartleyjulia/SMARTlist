@@ -12,6 +12,7 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, 
     .then(function(datum){
       console.log('Successful GET request');
       res.render('index.ejs', { datum: datum } );
+      console.log(datum);
     findPhoneNumber()
     .then(function(data) {
       console.log('Successful Phone request: ', data);
