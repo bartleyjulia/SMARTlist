@@ -8,7 +8,7 @@ $(document).ready(function() {
       $('.modal-title').text(data.title);
     }
   });
-
+// adding a line to test
   // WATCH MODAL DELETE BUTTON
   $('#watchDeleteButton').on('click', function(evt){
     let itemID = $('#watchModal').children().find('#watchModalTitle').text();
