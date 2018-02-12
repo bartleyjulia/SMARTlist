@@ -37,6 +37,11 @@ classifier.learn('purchase, order, aquire, source, shop, shopping, mall, store, 
 // LEARN OTHER
 classifier.learn('help, call, check, text, find, pay', '5');
 classifier.learn('phone, call, return, run, remember to, remember', '5');
+classifier.learn('perfume, car, wash, return, remember, fly, paint, draw, cash, find, call', '5');
+classifier.learn('bag, friend, close, open, wake, up, play, practice, use', '5');
+classifier.learn('clean, wash, walk, feed, charge, borrow, return, drop off, pick up, pick, up, off, down, dentist', '5');
+classifier.learn('doctor, appointment, booking, travel, health, sleep, connect, email, text, fax, phone, skype, facetime, message', '5');
+
 
 function categorizeInput(input) {
   let inputLower = input.toLowerCase();

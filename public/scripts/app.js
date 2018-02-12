@@ -1,5 +1,3 @@
-let yelp = require('./eatapi')
-
 $(document).ready(function() {
   
   // ENTER KEY SUBMITS ADD ITEM

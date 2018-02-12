@@ -119,19 +119,25 @@
           </section>
     </div>
 
+    <% JSON.stringify(datum) %>
+
     <!-- DONE CATEGORY -->
     <div class="container category">
-      <button id="toDone" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#doneList">DONE</button>
+      <button id="toDone" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#doneList"><i class="fas fa-random"></i> Done</button>
         <section id='doneList' class='collapse modalOpen'>
-          <% for (const item in datum) { %>
+          <% for (const item of datum[4]) { %>
             <% if (item.completed === true) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#doneModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
-                <%= item.list_item %>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+                  <label class="check">
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label>
+                  <%= item.list_item %>
               </button>
             <% } %>
           <% } %>
         </section>
-    </div>
+  </div>
 
 
     <!-- MODALS -->
