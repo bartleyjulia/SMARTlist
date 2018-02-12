@@ -24,7 +24,7 @@
     <form class="form-horizontal" action="/" method="POST"  role="form">
       <div class="container new-list">
         <div class="form-group" >
-          <textarea class="form-control" rows="5" id="comment" placeholder="What do you want to do?" name="input_list_item"></textarea>
+          <textarea class="form-control" rows="3" id="comment" placeholder="What do you want to do?" name="input_list_item"></textarea>
         </div>
         <button id="addButton" method="post" type="submit" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'><i class="fas fa-plus-circle"></i> Add</button>
       </div>
@@ -109,7 +109,17 @@
           </section>
     </div>
 
-
+    <!-- DONE CATEGORY -->
+    <div class="container category">
+      <button id="toDone" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#doneList">DONE</button>
+        <section id='doneList' class='collapse modalOpen'>
+          <% for (const item in datum[6]) { %>
+            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+              <%= item.list_item %>
+            </button>
+          <% } %>
+        </section>
+    </div>
 
 
     <!-- MODALS -->

@@ -1,4 +1,4 @@
-// let yelp = require('./eatapi')
+let yelp = require('./eatapi')
 
 $(document).ready(function() {
   
