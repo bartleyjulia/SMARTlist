@@ -16,6 +16,7 @@ var knex = require('knex')({
 function getListItemData() {
 
   const promise = new Promise( function(resolve, reject) {
+    // FUNCTIONS FOR SPECIFYING DATA TO BE EXTRACTED
     function completed(param) {
       let status = param['completed'];
       return status
@@ -35,12 +36,12 @@ function getListItemData() {
       let itemID = param['id'];
       return itemID;
     }
-
+    // QUERY FOR SELECTING ITEMS
     knex.select('*').from('user_lists').asCallback(function (err, result){
       if (err) {
         return reject(err);
       }
-
+      // OBJECT TO HOLD DATA RETRIEVED FROM DATABASE
       const datum = {};
       for (var item of result) {
         let a = getListItem(item);
@@ -61,8 +62,6 @@ function getListItemData() {
 }
 
 getListItemData();
-
-// console.log(getListItemData());
 
 
 exports.getListItemData = getListItemData;

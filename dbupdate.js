@@ -22,7 +22,6 @@ function deleteItemFromDatabase(item_identifier) {
         return reject(err);
       }
       resolve();
-      console.log('IN routes Deleted!');
     });
 
   });
@@ -49,11 +48,9 @@ function updateCategoryID(itemID, newCategoryID, completeness) {
       });
   });
   return promise;
-  console.log
-
 }
 
-
+// FUNCTION TO CONVERT CATEGORY WRITTEN AS STRING TO NUMBER ID
 function wordConverter(input) {
   let numValue = 0;
   if (input === 'Watch') {
@@ -72,6 +69,8 @@ function wordConverter(input) {
   return numValue;
 }
 
+
+// FUNCTION TO CONVERT STATUS TO TRUE FALSE VALUE
 function valueConverter(input) {
   let result = false;
   if (input === 'Yes') {
@@ -83,5 +82,4 @@ function valueConverter(input) {
 
 exports.wordConverter = wordConverter;
 exports.valueConverter = valueConverter;
-
 exports.updateCategoryID = updateCategoryID;
