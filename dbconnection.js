@@ -16,6 +16,11 @@ var knex = require('knex')({
 function getListItemData() {
 
   const promise = new Promise( function(resolve, reject) {
+    function completed(param) {
+      let status = param['completed'];
+      return status
+    }
+
     function getListItem(param) {
       let listItem = param['list_item'];
       return listItem;
@@ -41,11 +46,12 @@ function getListItemData() {
         let a = getListItem(item);
         let b = getCategory(item);
         let c = getID(item);
+        let d = completed(item);
 
         if (datum[b] === undefined) {
         datum[b] = [];
         }
-        datum[b].push({list_item: a , category_id: b, item_id: c });
+        datum[b].push({list_item: a , category_id: b, item_id: c, completed: d });
       }
       resolve(datum);
     });
