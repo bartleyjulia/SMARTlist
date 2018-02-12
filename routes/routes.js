@@ -12,7 +12,7 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, 
     .then(function(datum){
       console.log('Successful GET request');
       // console.log(datum);
-      findPhoneNumber('Revolver')
+      findPhoneNumber('cactus club')
       .then(function(phoneNumber) {
         // console.log('Successful Phone request: ', phoneNumber);
         res.render('index.ejs', { phoneNumber: phoneNumber, datum: datum});
@@ -39,7 +39,8 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, 
 
   });
 
-
+  router.get("/moreInfo", (req, res) => {
+  });
 
 
   router.post("/delete/:itemID", (req, res) => {
