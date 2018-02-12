@@ -1,4 +1,6 @@
-$(document).ready(function() {
+let yelp = require('./eatapi')
+
+$(document).ready(function() {  
 
   // POPULATE MODAL HEADER WITH LIST ITEM
   $('.modalOpen').on('click', function(evt){
@@ -114,41 +116,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-
-// $(document).ready(function() {
-//   let deleteButton = $('.btn-danger');
-//   // Function to delete items from database VIA modal using AJAX
-
-//     $(deleteButton).on('click', function(evt){
-//       let itemID = $('#watchModal').children().find('#watchModalTitle').text();
-//       console.log(itemID);
-//       evt.preventDefault();
-//       console.log("Deletebutton Clicked!");
-//       var targetPath = '/delete/' + itemID;
-//       console.log(targetPath);
-//       // $
-//       // $.post(targetPath, itemID).done(function() {
-//         // alert("Alert!");
-//       // });
-//       $.ajax({
-//         url: targetPath,
-//         method: 'POST',
-//         success: function(data) {
-
-//         console.log('AJAX request returned');
-
-//           // do stuff with the success data
-//         },
-//         error: function(err) {
-
-//         console.log('AJAX request failed');
-//         console.log(err);
-//         }
-//       });
-//       // }).done(function (tweet) {
-//       //   console.log('Success :', tweet);
-//       // });
-//     });
-// });
