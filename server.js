@@ -23,7 +23,7 @@ const dbupdate = require("./dbupdate.js");
 const yelp = require('./public/scripts/eatapi');
 
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/routes")(dbconnection.getListItemData, dbinput.saveInputToDatabase, dbupdate.deleteItemFromDatabase, dbupdate.updateCategoryID, dbupdate.wordConverter, yelp.findPhoneNumber);
+const usersRoutes = require("./routes/routes")(dbconnection.getListItemData, dbinput.saveInputToDatabase, dbupdate.deleteItemFromDatabase, dbupdate.updateCategoryID, dbupdate.wordConverter, yelp.findPhoneNumber, dbupdate.valueConverter);
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.

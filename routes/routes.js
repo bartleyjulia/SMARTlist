@@ -5,17 +5,17 @@ const router  = express.Router();
 
 
 
-module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, updateCategoryID, wordConverter, findPhoneNumber)=> {
+module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, updateCategoryID, wordConverter, findPhoneNumber, valueConverter)=> {
 
   router.get("/", (req, res) => {
     getListItemData()
     .then(function(datum){
       console.log('Successful GET request');
       res.render('index.ejs', { datum: datum } );
-      console.log(datum);
+      // console.log(datum);
     findPhoneNumber()
     .then(function(data) {
-      console.log('Successful Phone request: ', data);
+      // console.log('Successful Phone request: ', data);
       res.render('index.ejs', { data: data });
     })
     })
@@ -59,12 +59,13 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, 
   router.post("/edit/:id", (req, res) => {
     let itemID = req.body.datum.itemID;
     // let word = req.body.datum.category_id;
-    console.log(req.body.datum.category_id);
+    // console.log(req.body.datum.category_id);
     let newCategoryID = wordConverter(req.body.datum.category_id);
-    console.log(newCategoryID);
-
+    // console.log(newCategoryID);
+    let completed = valueConverter(req.body.datum.completed);
+    console.log(completed);
     console.log("Ajax call received");
-    updateCategoryID(itemID, newCategoryID);
+    updateCategoryID(itemID, newCategoryID, completed);
 
 
     res.redirect('/');

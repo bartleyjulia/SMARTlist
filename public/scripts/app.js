@@ -1,7 +1,7 @@
-let yelp = require('./eatapi')
+// let yelp = require('./eatapi');
 
 $(document).ready(function() {
-  
+
   // ENTER KEY SUBMITS ADD ITEM
   $('#comment').keypress(function (e) {
     if(e.keyCode == 13){
@@ -256,17 +256,19 @@ $(document).ready(function() {
   });
 
 
-});
 
   const saveOtherButton = $('#otherModal').children().find('.btn-primary');
   $(saveOtherButton).on('click', function(evt){
     // console.log(saveButton);
+    const completeButton = $('#selWatchDone').val();
+    console.log(completeButton);
     const selectButton = $('#selOtherCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#otherModal').children().find('#otherModalTitle').text();
     const datum = {
       category_id: selectButton,
-      itemID: itemID
+      itemID: itemID,
+      completed: completeButton
     };
     evt.preventDefault();
     var targetPath = '/edit/' + itemID;
@@ -289,3 +291,6 @@ $(document).ready(function() {
     //   console.log('Success :', tweet);
     location.reload();
   });
+
+});
+
