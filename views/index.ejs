@@ -26,7 +26,7 @@
         <div class="form-group" >
           <textarea class="form-control" rows="5" id="comment" placeholder="What do you want to do?" name="input_list_item"></textarea>
         </div>
-        <button id="addButton" method="post" type="submit" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'>ADD ITEM</button>
+        <button id="addButton" method="post" type="submit" class="btn btn-primary btn-lg btn-block" style='margin-top: -25px;'><i class="fas fa-plus-circle"></i> Add</button>
       </div>
     </form>
 
@@ -34,7 +34,7 @@
 
     <!-- WATCH CATEGORY -->
     <div class="container category">
-        <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList"><i class="fas fa-camera-retro"></i>TO WATCH</button>
+        <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList"><i class="fas fa-film"></i> Watch</button>
           <section id='watchList' class='collapse modalOpen'>
             <% for(const item of datum[1]) {%>
               <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
@@ -47,7 +47,7 @@
 
     <!-- READ CATEGORY -->
     <div class="container category">
-        <button id="toRead" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#readList">TO READ</button>
+        <button id="toRead" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#readList"><i class="fas fa-book"></i> Read</button>
           <section id='readList' class='collapse modalOpen'>
             <% for(const item of datum[4]) {%>
               <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
@@ -63,7 +63,7 @@
 
     <!-- EAT CATEGORY -->
     <div class="container category">
-        <button id="toEat" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#eatList">TO EAT</button>
+        <button id="toEat" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#eatList"><i class="fas fa-utensils"></i> Eat</button>
           <section id='eatList' class='collapse modalOpen'>
             <% for(const item of datum[2]) { %>
               <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
@@ -79,7 +79,7 @@
 
     <!-- BUY CATEGORY -->
     <div class="container category">
-        <button id="toBuy" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#buyList">TO BUY</button>
+        <button id="toBuy" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#buyList"><i class="fas fa-shopping-bag"></i> Buy</button>
           <section id='buyList' class='collapse modalOpen'>
              <% for (const item of datum[3]) { %>
               <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
@@ -95,7 +95,7 @@
 
     <!-- OTHER CATEGORY -->
     <div class="container category">
-        <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList">TO OTHER</button>
+        <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList"><i class="fas fa-random"></i> Other</button>
           <section id='otherList' class='collapse modalOpen'>
             <% for (const item of datum[5]) { %>
               <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
