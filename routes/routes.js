@@ -5,19 +5,21 @@ const router  = express.Router();
 
 
 
-module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, updateCategoryID, wordConverter)=> {
+module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, updateCategoryID, wordConverter, findPhoneNumber)=> {
 
   router.get("/", (req, res) => {
     getListItemData()
     .then(function(datum){
       console.log('Successful GET request');
       res.render('index.ejs', { datum: datum } );
-      console.log(datum);
-
+    findPhoneNumber()
+    .then(function(data) {
+      console.log('Successful Phone request: ', data);
+      res.render('index.ejs', { data: data });
+    })
     })
     .catch(function (err){
         throw err;
-
     });
   });
 
