@@ -36,11 +36,13 @@
     <div class="container category">
         <button id="toWatch" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#watchList"><i class="fas fa-film"></i> Watch</button>
           <section id='watchList' class='collapse modalOpen'>
-            <% for(const item of datum[1]) {%>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                  <%= item.list_item %>
-              </button>
+            <% for(const item of datum[1]) { %>
+              <% if (item.completed === false) { %>
+                <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#watchModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <%= item.list_item %>
+                </button>
+              <% } %>
             <% } %>
           </section>
     </div>
@@ -49,14 +51,16 @@
     <div class="container category">
         <button id="toRead" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#readList"><i class="fas fa-book"></i> Read</button>
           <section id='readList' class='collapse modalOpen'>
-            <% for(const item of datum[4]) {%>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
-                  <label class="check">
+            <% for(const item of datum[4]) { %>
+              <% if (item.completed === false) { %>
+                <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#readModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+                    <label class="check">
                       <input type="checkbox" >
                       <span class="checkmark"></span>
                     </label>
                     <%= item.list_item %>
-              </button>
+                </button>
+              <% } %>
             <% } %>
           </section>
     </div>
@@ -66,13 +70,15 @@
         <button id="toEat" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#eatList"><i class="fas fa-utensils"></i> Eat</button>
           <section id='eatList' class='collapse modalOpen'>
             <% for(const item of datum[2]) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
-                  <label class="check">
+              <% if (item.completed === false) { %>
+                <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+                    <label class="check">
                       <input type="checkbox" >
                       <span class="checkmark"></span>
                     </label>
                     <%= item.list_item %>
-              </button>
+                </button>
+              <% } %> 
             <% } %>
           </section>
     </div>
@@ -82,13 +88,15 @@
         <button id="toBuy" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#buyList"><i class="fas fa-shopping-bag"></i> Buy</button>
           <section id='buyList' class='collapse modalOpen'>
              <% for (const item of datum[3]) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+              <% if (item.completed === false) { %>
+                <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#buyModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
                   <label class="check">
                       <input type="checkbox" >
                       <span class="checkmark"></span>
                     </label>
                     <%= item.list_item %>
-              </button>
+                </button>
+              <% } %>
             <% } %>
           </section>
     </div>
@@ -98,13 +106,15 @@
         <button id="toOther" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#otherList"><i class="fas fa-random"></i> Other</button>
           <section id='otherList' class='collapse modalOpen'>
             <% for (const item of datum[5]) { %>
-              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
-                  <label class="check">
+              <% if (item.completed === false) { %>
+                <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#otherModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+                    <label class="check">
                       <input type="checkbox" >
                       <span class="checkmark"></span>
                     </label>
                     <%= item.list_item %>
-              </button>
+                </button>
+              <% } %>
             <% } %>
           </section>
     </div>
@@ -113,10 +123,12 @@
     <div class="container category">
       <button id="toDone" type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#doneList">DONE</button>
         <section id='doneList' class='collapse modalOpen'>
-          <% for (const item in datum[6]) { %>
-            <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
-              <%= item.list_item %>
-            </button>
+          <% for (const item in datum) { %>
+            <% if (item.completed === true) { %>
+              <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#doneModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
+                <%= item.list_item %>
+              </button>
+            <% } %>
           <% } %>
         </section>
     </div>
