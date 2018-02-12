@@ -127,6 +127,7 @@ $(document).ready(function() {
   const saveWatchButton = $('#watchModal').children().find('.btn-primary');
   $(saveWatchButton).on('click', function(evt){
     const selectButton = $('#selWatchCategory').val();
+    const completeButton = $('#selWatchDone').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#watchModal').children().find('#watchModalTitle').text();
     const datum = {
@@ -156,6 +157,7 @@ $(document).ready(function() {
 // READ MODAL CHANGE CATEGORY
   const saveReadButton = $('#readModal').children().find('.btn-primary');
   $(saveReadButton).on('click', function(evt){
+    const completeButton = $('#selReadDone').val();
     const selectButton = $('#selReadCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#readModal').children().find('#readModalTitle').text();
@@ -221,6 +223,7 @@ $(document).ready(function() {
   const saveBuyButton = $('#buyModal').children().find('.btn-primary');
   $(saveBuyButton).on('click', function(evt){
     const selectButton = $('#selBuyCategory').val();
+    const completeButton = $('#selBuyDone').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#buyModal').children().find('#buyModalTitle').text();
     const datum = {
@@ -251,6 +254,7 @@ $(document).ready(function() {
   const saveOtherButton = $('#otherModal').children().find('.btn-primary');
   $(saveOtherButton).on('click', function(evt){
     const selectButton = $('#selOtherCategory').val();
+    const completeButton = $('#selOtherDone').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#otherModal').children().find('#otherModalTitle').text();
     const datum = {
