@@ -1,6 +1,13 @@
-let yelp = require('./eatapi')
+// let yelp = require('./eatapi')
 
-$(document).ready(function() {  
+$(document).ready(function() {
+  
+  // ENTER KEY SUBMITS ADD ITEM
+  $('#comment').keypress(function (e) {
+    if(e.keyCode == 13){
+      $('#addButton').click();
+    }
+  });
 
   // POPULATE MODAL HEADER WITH LIST ITEM
   $('.modalOpen').on('click', function(evt){
@@ -10,8 +17,8 @@ $(document).ready(function() {
       $('.modal-title').text(data.title);
     }
   });
-
-  // WATCH MODAL DELETE BUTTON 
+// adding a line to test
+  // WATCH MODAL DELETE BUTTON
   $('#watchDeleteButton').on('click', function(evt){
     let itemID = $('#watchModal').children().find('#watchModalTitle').text();
 
@@ -35,7 +42,7 @@ $(document).ready(function() {
     location.reload();
   });
 
-  // READ MODAL DELETE BUTTON 
+  // READ MODAL DELETE BUTTON
   $('#readDeleteButton').on('click', function(evt){
     let itemID = $('#readModal').children().find('#readModalTitle').text();
     console.log(itemID);
@@ -55,7 +62,7 @@ $(document).ready(function() {
     location.reload();
   });
 
-  // eat MODAL DELETE BUTTON 
+  // eat MODAL DELETE BUTTON
   $('#eatDeleteButton').on('click', function(evt){
     let itemID = $('#eatModal').children().find('#eatModalTitle').text();
     console.log(itemID);
@@ -75,7 +82,7 @@ $(document).ready(function() {
     location.reload();
   });
 
-  // BUY MODAL DELETE BUTTON 
+  // BUY MODAL DELETE BUTTON
   $('#buyDeleteButton').on('click', function(evt){
     let itemID = $('#buyModal').children().find('#buyModalTitle').text();
     console.log(itemID);
@@ -95,7 +102,7 @@ $(document).ready(function() {
     location.reload();
   });
 
-  // OTHER MODAL DELETE BUTTON 
+  // OTHER MODAL DELETE BUTTON
   $('#otherDeleteButton').on('click', function(evt){
     let itemID = $('#otherModal').children().find('#otherModalTitle').text();
     console.log(itemID);
@@ -114,5 +121,139 @@ $(document).ready(function() {
     });
     location.reload();
   });
+
+// Function to update items from database VIA modal using AJAX
+// WATCH MODAL CHANGE CATEGORY
+  const saveWatchButton = $('#watchModal').children().find('.btn-primary');
+  $(saveWatchButton).on('click', function(evt){
+    // console.log(saveButton);
+    const selectButton = $('#selOtherCategory').val();
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#watchModal').children().find('#watchModalTitle').text();
+    const datum = {
+      category_id: selectButton,
+      itemID: itemID
+    };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      data: {
+        datum: datum
+      },
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    location.reload();
+  });
+
+// READ MODAL CHANGE CATEGORY
+  const saveReadButton = $('#readModal').children().find('.btn-primary');
+  $(saveReadButton).on('click', function(evt){
+    // console.log(saveButton);
+    const selectButton = $('#selReadCategory').val();
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#readModal').children().find('#readModalTitle').text();
+    const datum = {
+      category_id: selectButton,
+      itemID: itemID
+    };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      data: {
+        datum: datum
+      },
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    // .done(function (tweet) {
+    //   console.log('Success :', tweet);
+    location.reload();
+  });
+
+// EAT MODAL CHANGE CATEGORY
+  const saveEatButton = $('#eatModal').children().find('.btn-primary');
+  $(saveEatButton).on('click', function(evt){
+    // console.log('Savebutton', saveButton);
+    const selectButton = $('#selEatCategory').val();
+    console.log('Select button', selectButton);
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#eatModal').children().find('#eatModalTitle').text();
+    console.log('Item ID', itemID);
+    const datum = {
+      category_id: selectButton,
+      itemID: itemID
+    };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      data: {
+        datum: datum
+      },
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    // .done(function (tweet) {
+    //   console.log('Success :', tweet);
+  location.reload();
+  });
+
+// BUY MODAL CHANGE CATEGORY
+  const saveBuyButton = $('#buyModal').children().find('.btn-primary');
+  $(saveBuyButton).on('click', function(evt){
+    // console.log(saveButton);
+    const selectButton = $('#selBuyCategory').val();
+    console.log('selectbuttonoption', selectButton);
+    const itemID = $('#buyModal').children().find('#buyModalTitle').text();
+    const datum = {
+      category_id: selectButton,
+      itemID: itemID
+    };
+    evt.preventDefault();
+    var targetPath = '/edit/' + itemID;
+    $.ajax({
+      url: targetPath,
+      method: 'POST',
+      data: {
+        datum: datum
+      },
+      success: function(data) {
+        console.log('AJAX request returned');
+        // do stuff with the success data
+      },
+      error: function(err) {
+        console.log('AJAX request failed');
+        console.log(err);
+      }
+    });
+    // .done(function (tweet) {
+    //   console.log('Success :', tweet);
+  location.reload();
+  });
+
 
 });

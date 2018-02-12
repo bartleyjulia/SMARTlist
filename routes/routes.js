@@ -3,7 +3,9 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, findPhoneNumber) => {
+
+
+module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, updateCategoryID, wordConverter, findPhoneNumber)=> {
 
   router.get("/", (req, res) => {
     getListItemData()
@@ -40,9 +42,6 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, 
 
 
 
-
-
-
   router.post("/delete/:itemID", (req, res) => {
     // NOT DONE **** CHECK variable names/ PROCESS
     console.log("AJAX request Received");
@@ -52,20 +51,23 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, 
 
 
 
-
     res.redirect('/');
 
   });
 
-  // router.post("/edit/:id", (req, res) => {
-  //   // NOT DONE **** CHECK variable names
-  //   new_category = req.body.category;
-  //   item_id = req.params.id;
-  //   {
-  //   updateItemFromDatabase(item_identifier);
-  //   }
-  //    res.redirect('/');
+  router.post("/edit/:id", (req, res) => {
+    let itemID = req.body.datum.itemID;
+    // let word = req.body.datum.category_id;
+    console.log(req.body.datum.category_id);
+    let newCategoryID = wordConverter(req.body.datum.category_id);
+    console.log(newCategoryID);
 
-  // });
+    console.log("Ajax call received");
+    updateCategoryID(itemID, newCategoryID);
+
+
+    res.redirect('/');
+
+  });
   return router;
 };
