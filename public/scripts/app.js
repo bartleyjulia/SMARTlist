@@ -126,11 +126,6 @@ $(document).ready(function() {
 // WATCH MODAL CHANGE CATEGORY
   const saveWatchButton = $('#watchModal').children().find('.btn-primary');
   $(saveWatchButton).on('click', function(evt){
-<<<<<<< HEAD
-    // console.log(saveButton);
-    const completeButton = $('#selWatchDone').val();
-=======
->>>>>>> feature/yelpapi
     const selectButton = $('#selWatchCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#watchModal').children().find('#watchModalTitle').text();
@@ -161,11 +156,6 @@ $(document).ready(function() {
 // READ MODAL CHANGE CATEGORY
   const saveReadButton = $('#readModal').children().find('.btn-primary');
   $(saveReadButton).on('click', function(evt){
-<<<<<<< HEAD
-    // console.log(saveButton);
-    const completeButton = $('#selReadDone').val();
-=======
->>>>>>> feature/yelpapi
     const selectButton = $('#selReadCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#readModal').children().find('#readModalTitle').text();
@@ -230,11 +220,6 @@ $(document).ready(function() {
 // BUY MODAL CHANGE CATEGORY
   const saveBuyButton = $('#buyModal').children().find('.btn-primary');
   $(saveBuyButton).on('click', function(evt){
-<<<<<<< HEAD
-    // console.log(saveButton);
-    const completeButton = $('#selBuyDone').val();
-=======
->>>>>>> feature/yelpapi
     const selectButton = $('#selBuyCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#buyModal').children().find('#buyModalTitle').text();
@@ -263,17 +248,8 @@ $(document).ready(function() {
   });
 
 
-<<<<<<< HEAD
-
   const saveOtherButton = $('#otherModal').children().find('.btn-primary');
   $(saveOtherButton).on('click', function(evt){
-    // console.log(saveButton);
-    const completeButton = $('#selOtherDone').val();
-    console.log(completeButton);
-=======
-  const saveOtherButton = $('#otherModal').children().find('.btn-primary');
-  $(saveOtherButton).on('click', function(evt){
->>>>>>> feature/yelpapi
     const selectButton = $('#selOtherCategory').val();
     console.log('selectbuttonoption', selectButton);
     const itemID = $('#otherModal').children().find('#otherModalTitle').text();
@@ -301,9 +277,4 @@ $(document).ready(function() {
     location.reload();
   });
 
-<<<<<<< HEAD
 });
-
-=======
-});
->>>>>>> feature/yelpapi
