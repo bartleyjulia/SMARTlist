@@ -64,6 +64,7 @@ module.exports = (getListItemData, saveInputToDatabase, deleteItemFromDatabase, 
     // console.log(newCategoryID);
     let completed = valueConverter(req.body.datum.completed);
     console.log(completed);
+    console.log(req.body.datum.completed);
     console.log("Ajax call received");
     updateCategoryID(itemID, newCategoryID, completed);
 

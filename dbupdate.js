@@ -49,6 +49,7 @@ function updateCategoryID(itemID, newCategoryID, completeness) {
       });
   });
   return promise;
+  console.log
 
 }
 
@@ -72,7 +73,7 @@ function wordConverter(input) {
 }
 
 function valueConverter(input) {
-  let result = true;
+  let result = false;
   if (input === 'Yes') {
     result = true;
   }
