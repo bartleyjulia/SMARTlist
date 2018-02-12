@@ -17,7 +17,8 @@
 
     <!-- Nav bar -->
     <nav class="navbar navbar-inverse bg-#62D2FA" style="background-color: #62D2FA;">
-        <a class="navbar-brand" style="color: white; margin: 0 auto; font-size: 2em;">compleet.ai</a>
+        <a class="navbar-brand" style="color: white; margin: 0 auto; font-size: 2em;">
+          <i class="far fa-spin fa-list-alt"></i> compleet.ai</a>
     </nav>
 
     <!-- ADD ITEM -->
@@ -69,7 +70,7 @@
                 <button type="button" class="btn btn-secondary btn-lg btn-block listItem" data-toggle="modal" data-target="#eatModal" data-item-info='<%= JSON.stringify({ title: item.list_item, id: item.item_id}) %>'>
                   <%= item.list_item %>
                 </button>
-              <% } %> 
+              <% } %>
             <% } %>
           </section>
     </div>
