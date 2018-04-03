@@ -1,5 +1,7 @@
 # compleet.ai
 
+## By [Julia Bartley](https://github.com/bartleyjulia) and [Alex Lee](https://github.com/al8876)
+
 compleet.ai is a cutting edge todo list application that utilizes natural language processing and artificial intelligence to automatically sort data into specific categories. Users can add new items, re-categorize, check off, and delete items, as demonstrated in the GIF below:
 
 
