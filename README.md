@@ -2,9 +2,10 @@
 
 compleet.ai is a cutting edge todo list application that utilizes natural language processing and artificial intelligence to automatically sort data into specific categories. Users can add new items, re-categorize, check off, and delete items, as demonstrated in the GIF below:
 
-![User Actions GIF](https://github.com/bartleyjulia/SMARTlist/blob/master/docs/compleetiouseractions.gif)
 
-
+<p align="center">
+  <img src="https://github.com/bartleyjulia/SMARTlist/blob/master/docs/compleetiouseractions.gif"/>
+</p>
 
 
 Todo list items are composed by the user, and stored in a a SQL database (Postgres), where they are attached to categorizes and sorted based on completion.
